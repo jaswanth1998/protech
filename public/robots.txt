@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jaswanthtata.github.io/protech/sitemap.xml
