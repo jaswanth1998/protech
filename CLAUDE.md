@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Pro-Tech IT Consulting — "Your Reliable Service Partner." A static multi-page website for an IT consultancy / networking services business, built with React + Vite + Tailwind CSS, deployed via GitHub Pages.
+Pro-Tech IT Consulting — "Your Reliable Service Partner." A static multi-page website for an IT consultancy / networking services business, built with React + Vite + Tailwind CSS, deployed via Nginx reverse proxy.
 
 ## Repository Structure
 
@@ -17,7 +17,7 @@ Pro-Tech IT Consulting — "Your Reliable Service Partner." A static multi-page 
   - `data/` — Static data files
   - `utils/` — Helper functions
   - `styles/` — Global CSS with Tailwind v4 theme
-- `public/` — Static files (favicon, robots.txt, sitemap.xml, 404.html)
+- `public/` — Static files (favicon, robots.txt, sitemap.xml)
 - `.claude/plans/` — Project plans (see Plan Execution Workflow below)
 - `.claude/prompts/` — Custom prompts (e.g., `stepup.md`)
 
@@ -87,7 +87,7 @@ Plans should generally be executed in numerical order (00 → 01 → 02 → ...)
 | 04 | Page-by-Page Sections Plan | completed |
 | 05 | Component Build Plan | completed |
 | 06 | Content Requirements Plan | completed |
-| 07 | GitHub Actions & Deployment Plan | not_started |
+| 07 | ~~GitHub Actions & Deployment Plan~~ | removed (switched to Nginx) |
 | 08 | Implementation Sequence Plan | not_started |
 
 ---
@@ -104,15 +104,15 @@ Plans should generally be executed in numerical order (00 → 01 → 02 → ...)
 | Forms | React Hook Form + Zod | 7.71.2 / 4.3.6 |
 | Animations | Framer Motion | 12.34.5 |
 | SEO | react-helmet-async | 3.0.0 |
-| Deployment | GitHub Pages via GitHub Actions | — |
+| Deployment | Nginx (reverse proxy) | — |
 | Package Manager | npm (lockfile committed) | — |
 
 ## Key Configuration Notes
 
 - **Tailwind v4**: Uses CSS-based config via `@theme` in `src/styles/index.css` (no `tailwind.config.js`). Integrated via `@tailwindcss/vite` plugin.
 - **ESLint v9**: Uses flat config format in `eslint.config.js` (not `.eslintrc.cjs`).
-- **Vite base path**: Set to `/protech/` for GitHub Pages deployment.
-- **Router basename**: `/protech` in `src/router.jsx`.
+- **Vite base path**: Set to `/` (root).
+- **Router**: No basename (serves from root).
 - **Code splitting**: All pages lazy-loaded via `React.lazy()`.
 - **Path alias**: `@` → `/src` in vite.config.js.
 

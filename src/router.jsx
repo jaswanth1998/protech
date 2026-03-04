@@ -36,9 +36,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {
-    basename: '/protech',
-  },
+  {},
 );
 
 export default router;

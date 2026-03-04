@@ -3,6 +3,7 @@ import { LuLinkedin, LuTwitter, LuMapPin, LuPhone, LuMail, LuArrowRight } from '
 import { footerLinks } from '@/data/navigation';
 import { company } from '@/data/company';
 import Container from '@/components/ui/Container';
+import logoSvg from '@/assets/logo.svg';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,7 +21,7 @@ function Footer() {
           {/* Column 1: Logo + Tagline */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5" aria-label="Pro-Tech Home">
-              <img src="/protech/favicon.svg" alt="" className="h-8 w-8" aria-hidden="true" />
+              <img src={logoSvg} alt="" className="h-8 w-8" aria-hidden="true" />
               <span className="font-heading text-lg font-bold text-white">{company.name}</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-400">

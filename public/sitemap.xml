@@ -1,55 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER — Replace https://yourdomain.com with your actual domain -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jaswanthtata.github.io/protech/</loc>
+    <loc>https://yourdomain.com/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/about</loc>
+    <loc>https://yourdomain.com/about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services</loc>
+    <loc>https://yourdomain.com/services</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/network-infrastructure</loc>
+    <loc>https://yourdomain.com/services/network-infrastructure</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/structured-cabling</loc>
+    <loc>https://yourdomain.com/services/structured-cabling</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/wifi-wireless</loc>
+    <loc>https://yourdomain.com/services/wifi-wireless</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/voip-unified-comms</loc>
+    <loc>https://yourdomain.com/services/voip-unified-comms</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/cctv-security</loc>
+    <loc>https://yourdomain.com/services/cctv-security</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/managed-it-support</loc>
+    <loc>https://yourdomain.com/services/managed-it-support</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/cloud-hybrid-cloud</loc>
+    <loc>https://yourdomain.com/services/cloud-hybrid-cloud</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/services/project-management</loc>
+    <loc>https://yourdomain.com/services/project-management</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/industries</loc>
+    <loc>https://yourdomain.com/industries</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jaswanthtata.github.io/protech/contact</loc>
+    <loc>https://yourdomain.com/contact</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

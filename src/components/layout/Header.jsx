@@ -6,6 +6,7 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import NavDropdown from './NavDropdown';
 import MobileMenu from './MobileMenu';
+import logoSvg from '@/assets/logo.svg';
 
 function Header() {
   const { pathname } = useLocation();
@@ -30,7 +31,7 @@ function Header() {
       <Container className="flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5" aria-label="Pro-Tech IT Consulting Home">
-          <img src="/protech/favicon.svg" alt="" className="h-8 w-8" aria-hidden="true" />
+          <img src={logoSvg} alt="" className="h-8 w-8" aria-hidden="true" />
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold leading-tight text-navy-dark lg:text-xl">
               Pro-Tech
