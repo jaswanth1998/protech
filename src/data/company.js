@@ -7,16 +7,16 @@ export const company = {
 
   // PLACEHOLDER — replace with real address
   address: {
-    street: '123 Business Avenue, Suite 200',
-    city: 'Toronto',
-    province: 'Ontario',
-    postal: 'M5V 2T6',
+    street: '121 Keepsake Cres',
+    city: 'Halifax',
+    province: 'Nova Scotia',
+    postal: 'B3R 0H7',
     country: 'Canada',
   },
 
   // PLACEHOLDER — replace with real contact info
-  phone: '+1-416-555-0199',
-  email: 'contact@protechitconsulting.com',
+  phone: '+1-902-220-9995',
+  email: 'contact@pro-techitconsulting.com',
 
   businessHours: {
     weekday: '9:00 AM - 5:00 PM',

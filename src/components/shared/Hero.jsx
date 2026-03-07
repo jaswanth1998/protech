@@ -53,7 +53,7 @@ function Hero({ title, subtitle, primaryCTA, secondaryCTA }) {
           transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
           className="mx-auto mb-6 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-semibold tracking-wide text-primary"
         >
-          Pro-Tech IT Consulting
+          Pro-Tech IT Consulting Inc
         </motion.p>
 
         <motion.h1

@@ -1,5 +1,18 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import SEO from '@/components/shared/SEO';
+import ciscoLogo from '@/assets/images/logos/cisco.svg';
+import dellLogo from '@/assets/images/logos/dell.svg';
+import microsoftLogo from '@/assets/images/logos/microsoft.svg';
+import fortinetLogo from '@/assets/images/logos/fortinet.svg';
+import hpLogo from '@/assets/images/logos/hp.svg';
+import vmwareLogo from '@/assets/images/logos/vmware.svg';
+import awsLogo from '@/assets/images/logos/aws.svg';
+import juniperLogo from '@/assets/images/logos/juniper.svg';
+import paloaltoLogo from '@/assets/images/logos/paloalto.svg';
+import lenovoLogo from '@/assets/images/logos/lenovo.svg';
+import azureLogo from '@/assets/images/logos/azure.svg';
+import googleCloudLogo from '@/assets/images/logos/google-cloud.svg';
+import oracleLogo from '@/assets/images/logos/oracle.svg';
 import Hero from '@/components/shared/Hero';
 import LogoStrip from '@/components/shared/LogoStrip';
 import Container from '@/components/ui/Container';
@@ -14,14 +27,20 @@ import { services } from '@/data/services';
 import { industries } from '@/data/industries';
 import { stats } from '@/data/stats';
 
-// PLACEHOLDER — replace with real partner logos
 const partnerLogos = [
-  { alt: 'Cisco' },
-  { alt: 'Dell' },
-  { alt: 'Microsoft' },
-  { alt: 'Fortinet' },
-  { alt: 'HP' },
-  { alt: 'VMware' },
+  { src: ciscoLogo, alt: 'Cisco' },
+  { src: dellLogo, alt: 'Dell' },
+  { src: microsoftLogo, alt: 'Microsoft' },
+  { src: fortinetLogo, alt: 'Fortinet' },
+  { src: hpLogo, alt: 'HP' },
+  { src: vmwareLogo, alt: 'VMware' },
+  { src: awsLogo, alt: 'AWS' },
+  { src: juniperLogo, alt: 'Juniper' },
+  { src: paloaltoLogo, alt: 'Palo Alto Networks' },
+  { src: lenovoLogo, alt: 'Lenovo' },
+  { src: azureLogo, alt: 'Azure' },
+  { src: googleCloudLogo, alt: 'Google Cloud' },
+  { src: oracleLogo, alt: 'Oracle' },
 ];
 
 const whyChooseUs = [
