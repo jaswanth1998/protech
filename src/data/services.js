@@ -20,7 +20,7 @@ export const services = [
         icon: 'LuServer',
         title: 'LAN & WAN Design',
         description:
-          'Custom local and wide-area network architecture optimized for speed, reliability, and security across all your locations.',
+          'Custom local and wide-area network architecture optimized for speed, reliability, scalability and security across all your locations.',
       },
       {
         icon: 'LuShieldCheck',
@@ -170,7 +170,7 @@ export const services = [
       },
       {
         icon: 'LuWifi',
-        title: 'Wi-Fi 6 / 6E Deployment',
+        title: 'Wi-Fi Deployment',
         description:
           'Latest-generation wireless technology for faster speeds, lower latency, and better performance in high-density environments.',
       },

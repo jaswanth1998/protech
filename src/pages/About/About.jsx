@@ -160,7 +160,7 @@ function About() {
       </section>
 
       {/* Section 5: Our Team */}
-      <section className="bg-gray-50 py-16 md:py-20 lg:py-24">
+      {/* <section className="bg-gray-50 py-16 md:py-20 lg:py-24">
         <Container>
           <SectionHeading title="Meet Our Team" subtitle="The experts behind your IT success" />
           <motion.div
@@ -183,7 +183,7 @@ function About() {
             ))}
           </motion.div>
         </Container>
-      </section>
+      </section> */}
 
       {/* Section 6: Certifications & Partners */}
       <LogoStrip logos={certLogos} title="Certifications & Partners" />
