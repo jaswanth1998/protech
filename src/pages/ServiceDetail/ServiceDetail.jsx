@@ -8,6 +8,7 @@ import FeatureCard from '@/components/shared/FeatureCard';
 import ProcessStep from '@/components/shared/ProcessStep';
 import ServiceCard from '@/components/shared/ServiceCard';
 import CTABanner from '@/components/shared/CTABanner';
+import ZoomableImage from '@/components/shared/ZoomableImage';
 import Badge from '@/components/ui/Badge';
 import { services } from '@/data/services';
 import { industries } from '@/data/industries';
@@ -76,15 +77,12 @@ function ServiceDetail() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              {/* Service feature image */}
-              <div className="w-full rounded-2xl bg-gray-50 p-4 shadow-inner lg:h-80">
-                <img
-                  src={new URL('../../assets/images/wifi Service.png', import.meta.url).href}
-                  alt={`${service.name} service`}
-                  className="h-72 w-full object-contain lg:h-80"
-                  loading="lazy"
-                />
-              </div>
+              {/* Service feature image — zoomable for readable diagrams */}
+              <ZoomableImage
+                src={new URL(service.svgDiagram, import.meta.url).href}
+                alt={`${service.name} service diagram`}
+                className="h-72 w-full rounded-2xl bg-gray-50 shadow-inner lg:h-80"
+              />
             </div>
           </div>
         </Container>

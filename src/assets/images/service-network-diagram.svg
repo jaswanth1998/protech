@@ -1,0 +1,367 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Color Variables -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700');
+      
+      * {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      :root {
+        --teal-dark: #0d3d4d;
+        --teal-medium: #1a6b7f;
+        --teal-light: #2a9fb5;
+        --teal-bright: #3ec4d8;
+        --accent-green: #4fdbaa;
+        --bg-dark: #0a2a34;
+      }
+    </style>
+    
+    <!-- Gradients matching the teal theme -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a2a34;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d3d4d;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3ec4d8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a9fb5;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4fdbaa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3ec4d8;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="nodePulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3ec4d8;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3ec4d8;stop-opacity:0.1" />
+    </radialGradient>
+    
+    <!-- Filters -->
+    <filter id="glow-teal">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <filter id="deep-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#3ec4d8" flood-opacity="0.4"/>
+    </filter>
+    
+    <!-- Animations -->
+    <style>
+      @keyframes pulse {
+        0%, 100% { r: 10; opacity: 0.8; }
+        50% { r: 16; opacity: 0.3; }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      
+      @keyframes dataFlow {
+        0% { stroke-dashoffset: 30; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { stroke-dashoffset: -30; opacity: 0; }
+      }
+      
+      @keyframes glow-pulse {
+        0%, 100% { filter: drop-shadow(0 0 3px rgba(62, 196, 216, 0.5)); }
+        50% { filter: drop-shadow(0 0 10px rgba(62, 196, 216, 0.8)); }
+      }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      
+      .pulse-node { animation: pulse 2.5s ease-in-out infinite; }
+      .floating { animation: float 3.5s ease-in-out infinite; }
+      .data-path { animation: dataFlow 2.2s ease-in-out infinite; }
+      .glow-effect { animation: glow-pulse 2s ease-in-out infinite; }
+      .blink-indicator { animation: blink 1.5s ease-in-out infinite; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bgGradient)"/>
+  
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03" stroke="#3ec4d8" stroke-width="1">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none"/>
+      </pattern>
+    </defs>
+    <rect width="1400" height="900" fill="url(#grid)"/>
+  </g>
+  
+  <!-- ===== CONNECTION PATHS ===== -->
+  <!-- Main backbone - horizontal -->
+  <line x1="200" y1="450" x2="1200" y2="450" stroke="#1a6b7f" stroke-width="2" opacity="0.3"/>
+  <line x1="200" y1="450" x2="1200" y2="450" stroke="#3ec4d8" stroke-width="1.5" stroke-dasharray="15,15" class="data-path"/>
+  
+  <!-- Office to Central Hub -->
+  <line x1="300" y1="280" x2="500" y2="450" stroke="#1a6b7f" stroke-width="2" opacity="0.3"/>
+  <line x1="300" y1="280" x2="500" y2="450" stroke="#3ec4d8" stroke-width="1.5" stroke-dasharray="15,15" class="data-path" style="animation-delay: 0.3s;"/>
+  
+  <!-- Office to Branch -->
+  <line x1="300" y1="280" x2="300" y2="620" stroke="#1a6b7f" stroke-width="1.5" opacity="0.25"/>
+  
+  <!-- Central Hub to Secondary DC -->
+  <line x1="700" y1="450" x2="900" y2="450" stroke="#1a6b7f" stroke-width="2" opacity="0.3"/>
+  <line x1="700" y1="450" x2="900" y2="450" stroke="#3ec4d8" stroke-width="1.5" stroke-dasharray="15,15" class="data-path" style="animation-delay: 0.2s;"/>
+  
+  <!-- Secondary DC to Remote -->
+  <line x1="900" y1="450" x2="1100" y2="280" stroke="#1a6b7f" stroke-width="2" opacity="0.3"/>
+  <line x1="900" y1="450" x2="1100" y2="280" stroke="#3ec4d8" stroke-width="1.5" stroke-dasharray="15,15" class="data-path" style="animation-delay: 0.4s;"/>
+  
+  <!-- Secondary DC to Cloud -->
+  <line x1="900" y1="450" x2="1100" y2="620" stroke="#1a6b7f" stroke-width="2" opacity="0.3"/>
+  <line x1="900" y1="450" x2="1100" y2="620" stroke="#3ec4d8" stroke-width="1.5" stroke-dasharray="15,15" class="data-path" style="animation-delay: 0.5s;"/>
+  
+  <!-- Branch to Failover -->
+  <line x1="300" y1="620" x2="500" y2="620" stroke="#1a6b7f" stroke-width="1.5" opacity="0.3"/>
+  <line x1="300" y1="620" x2="500" y2="620" stroke="#4fdbaa" stroke-width="1.5" stroke-dasharray="12,12" class="data-path" style="animation-delay: 0.6s;"/>
+  
+  <!-- Internet Uplink -->
+  <line x1="700" y1="200" x2="700" y2="380" stroke="#1a6b7f" stroke-width="2.5" opacity="0.3"/>
+  <line x1="700" y1="200" x2="700" y2="380" stroke="#3ec4d8" stroke-width="1.5" stroke-dasharray="15,15" class="data-path" style="animation-delay: 0.1s;"/>
+  
+  <!-- ===== NODE ICONS AND LABELS ===== -->
+  
+  <!-- INTERNET / CLOUD UPLINK (Top Center) -->
+  <g class="floating" style="animation-delay: 0s;">
+    <g filter="url(#shadow)">
+      <!-- Cloud icon background -->
+      <path d="M 680 160 Q 660 140 640 140 Q 625 140 620 155 Q 610 145 595 145 Q 570 145 560 160 Q 550 150 530 150 Q 500 150 485 165 Q 475 160 460 160 Q 430 160 420 185 Q 400 195 400 215 L 800 215 Q 800 180 780 165 Q 765 150 745 150 Q 730 150 720 165 Q 710 155 695 155 Q 680 155 680 160 Z" fill="url(#tealGradient)" opacity="0.9"/>
+      <circle cx="700" cy="190" r="8" fill="#4fdbaa" class="glow-effect"/>
+    </g>
+    <text x="700" y="260" text-anchor="middle" font-size="14" font-weight="600" fill="#3ec4d8">Internet Uplink</text>
+  </g>
+  
+  <!-- PRIMARY OFFICE (Left - Upper) -->
+  <g class="floating" style="animation-delay: 0.2s;">
+    <g filter="url(#shadow)">
+      <!-- Building icon -->
+      <rect x="270" y="240" width="60" height="70" rx="4" fill="url(#tealGradient)" opacity="0.85"/>
+      <rect x="278" y="250" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="296" y="250" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="314" y="250" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="278" y="272" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="296" y="272" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="314" y="272" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <circle cx="300" cy="290" r="7" fill="#4fdbaa" class="glow-effect"/>
+    </g>
+    <text x="300" y="330" text-anchor="middle" font-size="12" font-weight="600" fill="#3ec4d8">HQ Office</text>
+    <text x="300" y="347" text-anchor="middle" font-size="10" fill="#2a9fb5">(Main Campus)</text>
+  </g>
+  
+  <!-- PRIMARY DATA CENTER (Center) -->
+  <g class="floating" style="animation-delay: 0.1s;">
+    <g filter="url(#deep-glow)">
+      <!-- Server rack -->
+      <rect x="660" y="400" width="80" height="100" rx="6" fill="url(#greenGradient)" opacity="0.9"/>
+      <!-- Server units -->
+      <rect x="668" y="410" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="668" y="426" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="668" y="442" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="668" y="458" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="668" y="474" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <!-- Activity indicators -->
+      <circle cx="700" cy="435" r="6" fill="#3ec4d8" class="pulse-node"/>
+      <circle cx="700" cy="470" r="3" fill="#4fdbaa" class="blink-indicator"/>
+    </g>
+    <text x="700" y="530" text-anchor="middle" font-size="13" font-weight="700" fill="#4fdbaa">PRIMARY DC</text>
+    <text x="700" y="548" text-anchor="middle" font-size="10" fill="#2a9fb5">(Core Infrastructure)</text>
+  </g>
+  
+  <!-- SECONDARY DATA CENTER (Right - Center) -->
+  <g class="floating" style="animation-delay: 0.3s;">
+    <g filter="url(#shadow)">
+      <!-- Server rack -->
+      <rect x="860" y="400" width="80" height="100" rx="6" fill="url(#tealGradient)" opacity="0.85"/>
+      <!-- Server units -->
+      <rect x="868" y="410" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="868" y="426" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="868" y="442" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="868" y="458" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <rect x="868" y="474" width="64" height="12" fill="#0a2a34" opacity="0.7"/>
+      <!-- Activity indicators -->
+      <circle cx="900" cy="435" r="6" fill="#3ec4d8" class="pulse-node"/>
+      <circle cx="900" cy="470" r="3" fill="#4fdbaa" class="blink-indicator" style="animation-delay: 0.5s;"/>
+    </g>
+    <text x="900" y="530" text-anchor="middle" font-size="13" font-weight="700" fill="#3ec4d8">SECONDARY DC</text>
+    <text x="900" y="548" text-anchor="middle" font-size="10" fill="#2a9fb5">(Redundancy &amp; Failover)</text>
+  </g>
+  
+  <!-- BRANCH OFFICE (Left - Lower) -->
+  <g class="floating" style="animation-delay: 0.4s;">
+    <g filter="url(#shadow)">
+      <!-- Building icon (smaller) -->
+      <rect x="270" y="580" width="60" height="70" rx="4" fill="url(#tealGradient)" opacity="0.85"/>
+      <rect x="278" y="590" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="296" y="590" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="314" y="590" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="278" y="612" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="296" y="612" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="314" y="612" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <circle cx="300" cy="630" r="6" fill="#3ec4d8" class="glow-effect" style="animation-delay: 0.3s;"/>
+    </g>
+    <text x="300" y="675" text-anchor="middle" font-size="12" font-weight="600" fill="#3ec4d8">Branch Office</text>
+    <text x="300" y="692" text-anchor="middle" font-size="10" fill="#2a9fb5">(Regional Site)</text>
+  </g>
+  
+  <!-- LOCAL FAILOVER/BACKUP (Center-Lower) -->
+  <g class="floating" style="animation-delay: 0.5s;">
+    <g filter="url(#shadow)">
+      <!-- Storage/Backup icon -->
+      <rect x="460" y="580" width="70" height="70" rx="5" fill="url(#greenGradient)" opacity="0.8"/>
+      <rect x="470" y="590" width="50" height="10" fill="#0a2a34" opacity="0.6"/>
+      <rect x="470" y="605" width="50" height="10" fill="#0a2a34" opacity="0.6"/>
+      <rect x="470" y="620" width="50" height="10" fill="#0a2a34" opacity="0.6"/>
+      <circle cx="495" cy="638" r="5" fill="#3ec4d8" class="blink-indicator" style="animation-delay: 0.4s;"/>
+    </g>
+    <text x="495" y="675" text-anchor="middle" font-size="12" font-weight="600" fill="#4fdbaa">Failover Node</text>
+    <text x="495" y="692" text-anchor="middle" font-size="10" fill="#2a9fb5">(Hot Standby)</text>
+  </g>
+  
+  <!-- REMOTE OFFICE (Right - Upper) -->
+  <g class="floating" style="animation-delay: 0.6s;">
+    <g filter="url(#shadow)">
+      <!-- Building icon -->
+      <rect x="1070" y="240" width="60" height="70" rx="4" fill="url(#tealGradient)" opacity="0.85"/>
+      <rect x="1078" y="250" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="1096" y="250" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="1114" y="250" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="1078" y="272" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="1096" y="272" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <rect x="1114" y="272" width="12" height="15" fill="#0a2a34" opacity="0.6"/>
+      <circle cx="1100" cy="290" r="7" fill="#4fdbaa" class="glow-effect" style="animation-delay: 0.2s;"/>
+    </g>
+    <text x="1100" y="330" text-anchor="middle" font-size="12" font-weight="600" fill="#3ec4d8">Remote Office</text>
+    <text x="1100" y="347" text-anchor="middle" font-size="10" fill="#2a9fb5">(WAN Connected)</text>
+  </g>
+  
+  <!-- CLOUD SERVICES (Right - Lower) -->
+  <g class="floating" style="animation-delay: 0.7s;">
+    <g filter="url(#shadow)">
+      <!-- Cloud icon -->
+      <path d="M 1050 580 Q 1035 565 1015 565 Q 1000 565 995 580 Q 985 570 970 570 Q 945 570 935 585 Q 925 575 905 575 Q 875 575 865 600 Q 845 610 845 630 L 1145 630 Q 1145 595 1125 580 Q 1110 565 1090 565 Q 1075 565 1065 580 Q 1055 570 1040 570 Q 1025 570 1025 575 Z" fill="url(#greenGradient)" opacity="0.9"/>
+      <circle cx="1100" cy="605" r="7" fill="#0a2a34" class="blink-indicator" style="animation-delay: 0.5s;"/>
+    </g>
+    <text x="1100" y="675" text-anchor="middle" font-size="12" font-weight="600" fill="#4fdbaa">Cloud Services</text>
+    <text x="1100" y="692" text-anchor="middle" font-size="10" fill="#2a9fb5">(Hybrid Connectivity)</text>
+  </g>
+  
+  <!-- ===== CONNECTION NODES (small circles on paths) ===== -->
+  <g fill="#3ec4d8" opacity="0.7">
+    <circle cx="400" cy="370" r="4"/>
+    <circle cx="600" cy="450" r="4"/>
+    <circle cx="780" cy="450" r="4"/>
+    <circle cx="950" cy="360" r="4"/>
+    <circle cx="950" cy="540" r="4"/>
+  </g>
+  
+  <!-- ===== FEATURE LABELS / BADGES ===== -->
+  
+  <!-- Top Left - Redundancy -->
+  <g>
+    <rect x="30" y="70" width="340" height="85" rx="8" fill="rgba(62, 196, 216, 0.1)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <text x="50" y="103" font-size="12" font-weight="700" fill="#4fdbaa">✓ Multi-Site Redundancy</text>
+    <text x="50" y="135" font-size="11" fill="#2a9fb5">Failover protection across multiple locations</text>
+  </g>
+  
+  <!-- Top Right - SD-WAN -->
+  <g>
+    <rect x="1030" y="70" width="340" height="85" rx="8" fill="rgba(62, 196, 216, 0.1)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <text x="1050" y="103" font-size="12" font-weight="700" fill="#4fdbaa">✓ SD-WAN Ready</text>
+    <text x="1050" y="135" font-size="11" fill="#2a9fb5">Flexible &amp; scalable WAN architecture</text>
+  </g>
+  
+  <!-- Bottom Left - Enterprise Grade -->
+  <g>
+    <rect x="30" y="745" width="340" height="85" rx="8" fill="rgba(79, 219, 170, 0.1)" stroke="#4fdbaa" stroke-width="1.5"/>
+    <text x="50" y="778" font-size="12" font-weight="700" fill="#4fdbaa">✓ Enterprise-Grade Components</text>
+    <text x="50" y="810" font-size="11" fill="#2a9fb5">Leading industry platform support &amp; compatibility</text>
+  </g>
+  
+  <!-- Bottom Center - Security -->
+  <g>
+    <rect x="420" y="745" width="340" height="85" rx="8" fill="rgba(62, 196, 216, 0.1)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <text x="440" y="778" font-size="12" font-weight="700" fill="#4fdbaa">✓ Built-in Security</text>
+    <text x="440" y="810" font-size="11" fill="#2a9fb5">Integrated protection &amp; compliance measures</text>
+  </g>
+  
+  <!-- Bottom Right - Support -->
+  <g>
+    <rect x="1030" y="745" width="340" height="85" rx="8" fill="rgba(79, 219, 170, 0.1)" stroke="#4fdbaa" stroke-width="1.5"/>
+    <text x="1050" y="778" font-size="12" font-weight="700" fill="#4fdbaa">✓ 24/7 Professional Support</text>
+    <text x="1050" y="810" font-size="11" fill="#2a9fb5">Design through deployment &amp; post-installation</text>
+  </g>
+  
+  <!-- DESIGN & DOCUMENTATION NODE (Left side, middle) -->
+  <g class="floating" style="animation-delay: 0.8s;">
+    <g filter="url(#shadow)">
+      <!-- Document/Blueprint icon -->
+      <rect x="80" y="400" width="70" height="85" rx="5" fill="url(#tealGradient)" opacity="0.85"/>
+      <line x1="95" y1="420" x2="145" y2="420" stroke="#0a2a34" stroke-width="1.5" opacity="0.6"/>
+      <line x1="95" y1="435" x2="145" y2="435" stroke="#0a2a34" stroke-width="1.5" opacity="0.6"/>
+      <line x1="95" y1="450" x2="140" y2="450" stroke="#0a2a34" stroke-width="1.5" opacity="0.6"/>
+      <line x1="95" y1="465" x2="135" y2="465" stroke="#0a2a34" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="115" cy="468" r="5" fill="#4fdbaa" class="blink-indicator" style="animation-delay: 0.2s;"/>
+    </g>
+    <text x="115" y="510" text-anchor="middle" font-size="11" font-weight="600" fill="#3ec4d8">Design &amp;</text>
+    <text x="115" y="525" text-anchor="middle" font-size="11" font-weight="600" fill="#3ec4d8">Documentation</text>
+  </g>
+  
+  <!-- TESTING & OPTIMIZATION NODE (Right side, middle) -->
+  <g class="floating" style="animation-delay: 1s;">
+    <g filter="url(#shadow)">
+      <!-- Testing/Optimization icon (gauge/meter) -->
+      <circle cx="1245" cy="442" r="28" fill="url(#greenGradient)" opacity="0.85"/>
+      <circle cx="1245" cy="442" r="22" fill="none" stroke="#0a2a34" stroke-width="2" opacity="0.6"/>
+      <line x1="1245" y1="442" x2="1260" y2="430" stroke="#0a2a34" stroke-width="2.5" opacity="0.8" stroke-linecap="round"/>
+      <circle cx="1245" cy="442" r="4" fill="#0a2a34" opacity="0.8"/>
+      <circle cx="1245" cy="415" r="3" fill="#4fdbaa" class="blink-indicator" style="animation-delay: 0.6s;"/>
+    </g>
+    <text x="1245" y="510" text-anchor="middle" font-size="11" font-weight="600" fill="#4fdbaa">Testing &amp;</text>
+    <text x="1245" y="525" text-anchor="middle" font-size="11" font-weight="600" fill="#4fdbaa">Optimization</text>
+  </g>
+  
+  <!-- Connection from Design node to Primary DC -->
+  <line x1="150" y1="442" x2="660" y2="450" stroke="#1a6b7f" stroke-width="1.5" opacity="0.25"/>
+  
+  <!-- Connection from Secondary DC to Testing node -->
+  <line x1="940" y1="450" x2="1217" y2="442" stroke="#1a6b7f" stroke-width="1.5" opacity="0.25"/>
+  
+  <!-- ===== LIFECYCLE FLOW INDICATOR ===== -->
+  <g opacity="0.5">
+    <text x="115" y="340" text-anchor="middle" font-size="10" font-weight="600" fill="#4fdbaa">1. DESIGN</text>
+    <text x="600" y="520" text-anchor="middle" font-size="10" font-weight="600" fill="#3ec4d8">2. DEPLOYMENT</text>
+    <text x="1245" y="340" text-anchor="middle" font-size="10" font-weight="600" fill="#4fdbaa">3. OPTIMIZE</text>
+  </g>
+  
+  <!-- ===== LEGEND / INDICATORS ===== -->
+  <g opacity="0.6">
+    <!-- Data flow indicator -->
+    <line x1="50" y1="680" x2="90" y2="680" stroke="#3ec4d8" stroke-width="2" stroke-dasharray="8,8"/>
+    <text x="105" y="685" font-size="11" fill="#3ec4d8">Data Flow</text>
+    
+    <!-- Active node indicator -->
+    <circle cx="65" cy="698" r="4" fill="#4fdbaa"/>
+    <text x="105" y="703" font-size="11" fill="#3ec4d8">Active Node</text>
+  </g>
+  
+
+</svg>

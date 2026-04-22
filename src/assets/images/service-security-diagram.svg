@@ -1,0 +1,498 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap');
+    </style>
+
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060f14"/>
+      <stop offset="100%" stop-color="#0a1e28"/>
+    </linearGradient>
+
+    <linearGradient id="buildingFace" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f2d3d"/>
+      <stop offset="100%" stop-color="#081a24"/>
+    </linearGradient>
+
+    <linearGradient id="buildingSide" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a2030"/>
+      <stop offset="100%" stop-color="#061420"/>
+    </linearGradient>
+
+    <linearGradient id="buildingRoof" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#163a50"/>
+      <stop offset="100%" stop-color="#0d2535"/>
+    </linearGradient>
+
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3ec4d8"/>
+      <stop offset="100%" stop-color="#2a9fb5"/>
+    </linearGradient>
+
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4fdbaa"/>
+      <stop offset="100%" stop-color="#3ec4d8"/>
+    </linearGradient>
+
+    <linearGradient id="alertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#e84040"/>
+    </linearGradient>
+
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb830"/>
+      <stop offset="100%" stop-color="#ff8c00"/>
+    </linearGradient>
+
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#122a38"/>
+      <stop offset="100%" stop-color="#081820"/>
+    </linearGradient>
+
+    <!-- Camera cone gradient -->
+    <radialGradient id="camCone1" cx="0%" cy="50%" r="100%">
+      <stop offset="0%"   stop-color="#ff8c00" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ff8c00" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="camCone2" cx="0%" cy="50%" r="100%">
+      <stop offset="0%"   stop-color="#ff8c00" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#ff8c00" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="camCone3" cx="100%" cy="50%" r="100%">
+      <stop offset="0%"   stop-color="#ff8c00" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ff8c00" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="camCone4" cx="50%" cy="0%" r="100%">
+      <stop offset="0%"   stop-color="#ff8c00" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#ff8c00" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Motion zone gradient -->
+    <radialGradient id="motionZone" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#3ec4d8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#3ec4d8" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow-cam" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="glow-alert" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="glow-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+
+    <style>
+      @keyframes blink {
+        0%, 100% { opacity: 0.3; }
+        50%      { opacity: 1; }
+      }
+      @keyframes alertPulse {
+        0%, 100% { opacity: 0.5; r: 5; }
+        50%      { opacity: 1;   r: 7; }
+      }
+      @keyframes scanSweep {
+        0%   { opacity: 0.6; }
+        50%  { opacity: 0.2; }
+        100% { opacity: 0.6; }
+      }
+      @keyframes camBlink {
+        0%, 100% { fill: #ff4040; }
+        50%      { fill: #ff8c00; }
+      }
+      @keyframes dataFlow {
+        0%   { stroke-dashoffset: 30; opacity: 0; }
+        10%  { opacity: 0.7; }
+        90%  { opacity: 0.7; }
+        100% { stroke-dashoffset: -30; opacity: 0; }
+      }
+      @keyframes floatUp {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-5px); }
+      }
+      @keyframes accessGreen {
+        0%, 80%, 100% { fill: #4fdbaa; opacity: 0.8; }
+        40%           { fill: #4fdbaa; opacity: 1; }
+      }
+      @keyframes motionPulse {
+        0%, 100% { opacity: 0.08; }
+        50%      { opacity: 0.18; }
+      }
+      @keyframes recordPulse {
+        0%, 100% { opacity: 1;   r: 4; }
+        50%      { opacity: 0.4; r: 3; }
+      }
+
+      .blink  { animation: blink 1.6s ease-in-out infinite; }
+      .blink2 { animation: blink 1.6s ease-in-out infinite; animation-delay: 0.4s; }
+      .blink3 { animation: blink 1.6s ease-in-out infinite; animation-delay: 0.8s; }
+      .blink4 { animation: blink 1.6s ease-in-out infinite; animation-delay: 1.2s; }
+      .cam-led { animation: camBlink 2s ease-in-out infinite; }
+      .cam-led2{ animation: camBlink 2s ease-in-out infinite; animation-delay: 0.5s; }
+      .cam-led3{ animation: camBlink 2s ease-in-out infinite; animation-delay: 1s; }
+      .scan   { animation: scanSweep 2.5s ease-in-out infinite; }
+      .flow   { animation: dataFlow 2s linear infinite; }
+      .flow2  { animation: dataFlow 2s linear infinite; animation-delay: 0.5s; }
+      .flow3  { animation: dataFlow 2s linear infinite; animation-delay: 1s; }
+      .flow4  { animation: dataFlow 2s linear infinite; animation-delay: 1.5s; }
+      .float  { animation: floatUp 4s ease-in-out infinite; }
+      .float2 { animation: floatUp 4s ease-in-out infinite; animation-delay: 1s; }
+      .float3 { animation: floatUp 4s ease-in-out infinite; animation-delay: 2s; }
+      .access { animation: accessGreen 2s ease-in-out infinite; }
+      .motion { animation: motionPulse 3s ease-in-out infinite; }
+      .rec    { animation: recordPulse 1s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="1400" height="900" fill="url(#bg)"/>
+
+  <!-- Fine dot grid -->
+  <pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse">
+    <circle cx="12" cy="12" r="0.6" fill="#3ec4d8" opacity="0.07"/>
+  </pattern>
+  <rect width="1400" height="900" fill="url(#dots)"/>
+
+  <!-- Subtle hex pattern top right -->
+  <g opacity="0.04" stroke="#3ec4d8" stroke-width="0.8" fill="none">
+    <polygon points="1150,60 1180,77 1180,111 1150,128 1120,111 1120,77"/>
+    <polygon points="1210,60 1240,77 1240,111 1210,128 1180,111 1180,77"/>
+    <polygon points="1270,60 1300,77 1300,111 1270,128 1240,111 1240,77"/>
+    <polygon points="1330,60 1360,77 1360,111 1330,128 1300,111 1300,77"/>
+    <polygon points="1180,111 1210,128 1210,162 1180,179 1150,162 1150,128"/>
+    <polygon points="1240,111 1270,128 1270,162 1240,179 1210,162 1210,128"/>
+    <polygon points="1300,111 1330,128 1330,162 1300,179 1270,162 1270,128"/>
+  </g>
+
+  <!-- ===== ISOMETRIC BUILDING ===== -->
+
+  <!-- Building shadow -->
+  <ellipse cx="700" cy="790" rx="380" ry="25" fill="#000" opacity="0.4"/>
+
+  <!-- Building — right side face -->
+  <polygon points="900,200 1060,290 1060,650 900,560" fill="url(#buildingSide)" stroke="#1a4d5f" stroke-width="1.2"/>
+
+  <!-- Building — front face -->
+  <polygon points="340,290 900,290 900,650 340,650" fill="url(#buildingFace)" stroke="#1a4d5f" stroke-width="1.2"/>
+
+  <!-- Building — roof -->
+  <polygon points="340,290 900,290 1060,200 500,200" fill="url(#buildingRoof)" stroke="#1a4d5f" stroke-width="1.5"/>
+
+  <!-- Floor lines on front face -->
+  <line x1="340" y1="420" x2="900" y2="420" stroke="#1a4d5f" stroke-width="0.8" opacity="0.5"/>
+  <line x1="340" y1="535" x2="900" y2="535" stroke="#1a4d5f" stroke-width="0.8" opacity="0.5"/>
+  <!-- Vertical column lines -->
+  <line x1="500" y1="290" x2="500" y2="650" stroke="#1a4d5f" stroke-width="0.8" opacity="0.4"/>
+  <line x1="660" y1="290" x2="660" y2="650" stroke="#1a4d5f" stroke-width="0.8" opacity="0.4"/>
+  <line x1="820" y1="290" x2="820" y2="650" stroke="#1a4d5f" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Floor lines on right side face -->
+  <line x1="900" y1="385" x2="1060" y2="470" stroke="#1a4d5f" stroke-width="0.8" opacity="0.4"/>
+  <line x1="900" y1="520" x2="1060" y2="570" stroke="#1a4d5f" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- ===== WINDOWS — Front Face ===== -->
+  <!-- Floor 3 windows -->
+  <g fill="#0d2535" stroke="#1a6b7f" stroke-width="0.8">
+    <rect x="370" y="308" width="50" height="38" rx="2"/>
+    <rect x="450" y="308" width="50" height="38" rx="2"/>
+    <rect x="530" y="308" width="50" height="38" rx="2"/>
+    <rect x="610" y="308" width="50" height="38" rx="2"/>
+    <rect x="690" y="308" width="50" height="38" rx="2"/>
+    <rect x="770" y="308" width="50" height="38" rx="2"/>
+    <rect x="850" y="308" width="40" height="38" rx="2"/>
+  </g>
+  <!-- Floor 2 windows -->
+  <g fill="#0d2535" stroke="#1a6b7f" stroke-width="0.8">
+    <rect x="370" y="438" width="50" height="38" rx="2"/>
+    <rect x="450" y="438" width="50" height="38" rx="2"/>
+    <rect x="530" y="438" width="50" height="38" rx="2"/>
+    <rect x="610" y="438" width="50" height="38" rx="2"/>
+    <rect x="690" y="438" width="50" height="38" rx="2"/>
+    <rect x="770" y="438" width="50" height="38" rx="2"/>
+    <rect x="850" y="438" width="40" height="38" rx="2"/>
+  </g>
+  <!-- Window glow — some lit up -->
+  <rect x="530" y="308" width="50" height="38" rx="2" fill="#3ec4d8" opacity="0.06" class="blink2"/>
+  <rect x="610" y="308" width="50" height="38" rx="2" fill="#3ec4d8" opacity="0.08" class="blink3"/>
+  <rect x="450" y="438" width="50" height="38" rx="2" fill="#3ec4d8" opacity="0.07" class="blink"/>
+  <rect x="690" y="438" width="50" height="38" rx="2" fill="#3ec4d8" opacity="0.06" class="blink4"/>
+
+  <!-- Main entrance door -->
+  <rect x="580" y="570" width="80" height="80" rx="3" fill="#0a2030" stroke="#1a6b7f" stroke-width="1.2"/>
+  <rect x="580" y="570" width="38" height="80" rx="3" fill="#0a2030" stroke="#1a6b7f" stroke-width="1"/>
+  <circle cx="620" cy="610" r="3" fill="#4fdbaa" class="access" filter="url(#glow-soft)"/>
+
+  <!-- ===== ACCESS CONTROL PANELS ===== -->
+
+  <!-- Main entrance keypad -->
+  <g class="float2" filter="url(#shadow)">
+    <rect x="665" y="575" width="36" height="55" rx="4" fill="url(#panelGrad)" stroke="#4fdbaa" stroke-width="1.4"/>
+    <rect x="669" y="580" width="28" height="14" rx="2" fill="#0a1e28" stroke="#3ec4d8" stroke-width="0.6"/>
+    <!-- Keypad dots -->
+    <circle cx="675" cy="601" r="2.5" fill="#4fdbaa" class="blink"/>
+    <circle cx="683" cy="601" r="2.5" fill="#4fdbaa" class="blink2"/>
+    <circle cx="691" cy="601" r="2.5" fill="#3ec4d8" class="blink3"/>
+    <circle cx="675" cy="610" r="2.5" fill="#3ec4d8" class="blink2"/>
+    <circle cx="683" cy="610" r="2.5" fill="#4fdbaa" class="blink4"/>
+    <circle cx="691" cy="610" r="2.5" fill="#3ec4d8" class="blink"/>
+    <circle cx="683" cy="619" r="2.5" fill="#4fdbaa" class="blink3"/>
+    <!-- Status green -->
+    <circle cx="683" cy="623" r="3" fill="#4fdbaa" class="access" filter="url(#glow-soft)"/>
+    <text x="683" y="636" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#4fdbaa">ACCESS</text>
+  </g>
+
+  <!-- Side door access panel -->
+  <g class="float3" filter="url(#shadow)">
+    <rect x="888" y="485" width="30" height="45" rx="4" fill="url(#panelGrad)" stroke="#4fdbaa" stroke-width="1.2"/>
+    <circle cx="895" cy="498" r="2" fill="#4fdbaa" class="blink"/>
+    <circle cx="903" cy="498" r="2" fill="#3ec4d8" class="blink2"/>
+    <circle cx="895" cy="506" r="2" fill="#3ec4d8" class="blink3"/>
+    <circle cx="903" cy="506" r="2" fill="#4fdbaa" class="blink4"/>
+    <circle cx="899" cy="520" r="3" fill="#4fdbaa" class="access" filter="url(#glow-soft)"/>
+  </g>
+
+  <!-- ===== CAMERA COVERAGE CONES ===== -->
+
+  <!-- Camera 1 — Top-left corner, sweeping right-downward -->
+  <polygon points="340,290 200,180 480,180" fill="url(#camCone1)" class="scan" opacity="0.7"/>
+
+  <!-- Camera 2 — Top-right of building, sweeping down-left -->
+  <polygon points="900,290 1080,160 1140,380" fill="url(#camCone2)" class="scan" opacity="0.6"/>
+
+  <!-- Camera 3 — Right wall mid, sweeping outward -->
+  <polygon points="1060,420 1240,340 1260,500" fill="url(#camCone3)" class="scan" opacity="0.5"/>
+
+  <!-- Camera 4 — Front entrance, looking down -->
+  <polygon points="620,290 480,140 760,140" fill="url(#camCone4)" class="scan" opacity="0.55"/>
+
+  <!-- ===== MOTION DETECTION ZONES ===== -->
+  <ellipse cx="310" cy="620" rx="130" ry="80" fill="#3ec4d8" opacity="0" class="motion">
+    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="1000" cy="580" rx="100" ry="70" fill="#3ec4d8" opacity="0" class="motion">
+    <animate attributeName="opacity" values="0.05;0.15;0.05" dur="3s" begin="1s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- ===== IP CAMERAS ===== -->
+
+  <!-- Camera 1 — top-left corner of building -->
+  <g filter="url(#glow-cam)">
+    <rect x="327" y="277" width="22" height="10" rx="3" fill="#1a3d50" stroke="#ffb830" stroke-width="1.2"/>
+    <polygon points="349,279 362,275 362,291 349,287" fill="#ffb830" opacity="0.9"/>
+    <circle cx="333" cy="282" r="3" class="cam-led" filter="url(#glow-alert)"/>
+  </g>
+  <text x="290" y="270" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#ffb830" font-weight="600">CAM-01</text>
+
+  <!-- Camera 2 — roof right corner -->
+  <g filter="url(#glow-cam)" transform="translate(900,195)">
+    <rect x="-11" y="-5" width="22" height="10" rx="3" fill="#1a3d50" stroke="#ffb830" stroke-width="1.2"/>
+    <polygon points="-11,-3 -24,-7 -24,9 -11,5" fill="#ffb830" opacity="0.9"/>
+    <circle cx="5" cy="0" r="3" class="cam-led2" filter="url(#glow-alert)"/>
+  </g>
+  <text x="940" y="185" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#ffb830" font-weight="600">CAM-02</text>
+
+  <!-- Camera 3 — right face wall -->
+  <g filter="url(#glow-cam)" transform="translate(1062,420)">
+    <rect x="-5" y="-5" width="10" height="22" rx="3" fill="#1a3d50" stroke="#ffb830" stroke-width="1.2"/>
+    <polygon points="-3,-5 7,-18 7,-5" fill="#ffb830" opacity="0"/>
+    <rect x="-5" y="-5" width="10" height="22" rx="3" fill="#1a3d50" stroke="#ffb830" stroke-width="1.2"/>
+    <polygon points="5,5 20,-2 20,18 5,15" fill="#ffb830" opacity="0.9"/>
+    <circle cx="-1" cy="6" r="3" class="cam-led3" filter="url(#glow-alert)"/>
+  </g>
+  <text x="1095" y="410" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#ffb830" font-weight="600">CAM-03</text>
+
+  <!-- Camera 4 — front center top, angled down -->
+  <g filter="url(#glow-cam)">
+    <rect x="609" y="278" width="22" height="10" rx="3" fill="#1a3d50" stroke="#ffb830" stroke-width="1.2"/>
+    <polygon points="620,278 613,264 627,264" fill="#ffb830" opacity="0.9"/>
+    <circle cx="620" cy="283" r="3" class="cam-led" filter="url(#glow-alert)"/>
+  </g>
+  <text x="660" y="270" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#ffb830" font-weight="600">CAM-04</text>
+
+  <!-- ===== NVR / STORAGE — bottom right ===== -->
+  <g class="float" filter="url(#shadow)">
+    <rect x="1080" y="600" width="200" height="140" rx="8" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="1.8"/>
+    <rect x="1080" y="600" width="200" height="20" rx="8" fill="#3ec4d8" opacity="0.12"/>
+    <text x="1180" y="616" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#3ec4d8" letter-spacing="1">NVR / STORAGE</text>
+    <!-- Drive bays -->
+    <rect x="1094" y="628" width="172" height="10" rx="2" fill="#0a1e28" stroke="#1a4d5f" stroke-width="0.8"/>
+    <rect x="1094" y="642" width="172" height="10" rx="2" fill="#0a1e28" stroke="#1a4d5f" stroke-width="0.8"/>
+    <rect x="1094" y="656" width="172" height="10" rx="2" fill="#0a1e28" stroke="#3ec4d8" stroke-width="0.8"/>
+    <rect x="1094" y="670" width="172" height="10" rx="2" fill="#0a1e28" stroke="#1a4d5f" stroke-width="0.8"/>
+    <!-- Activity LEDs -->
+    <circle cx="1258" cy="633" r="3" fill="#4fdbaa" class="blink"/>
+    <circle cx="1258" cy="647" r="3" fill="#4fdbaa" class="blink2"/>
+    <circle cx="1258" cy="661" r="3" fill="#ffb830" class="blink3"/>
+    <circle cx="1258" cy="675" r="3" fill="#4fdbaa" class="blink4"/>
+    <!-- REC indicator -->
+    <circle cx="1100" cy="692" r="5" fill="#ff4040" class="rec" filter="url(#glow-alert)"/>
+    <text x="1112" y="696" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#ff4040">REC</text>
+    <text x="1180" y="728" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Configurable retention</text>
+    <text x="1180" y="740" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">4K footage storage</text>
+  </g>
+
+  <!-- ===== UNIFIED MONITORING DASHBOARD — bottom left ===== -->
+  <g class="float2" filter="url(#shadow)">
+    <rect x="110" y="580" width="215" height="175" rx="8" fill="url(#panelGrad)" stroke="#4fdbaa" stroke-width="1.8"/>
+    <rect x="110" y="580" width="215" height="20" rx="8" fill="#4fdbaa" opacity="0.12"/>
+    <text x="217" y="596" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa" letter-spacing="1">MONITORING</text>
+    <!-- 4 mini camera feeds in 2x2 grid -->
+    <rect x="120" y="606" width="90" height="60" rx="3" fill="#0a1420" stroke="#1a4d5f" stroke-width="0.8"/>
+    <rect x="218" y="606" width="90" height="60" rx="3" fill="#0a1420" stroke="#1a4d5f" stroke-width="0.8"/>
+    <rect x="120" y="672" width="90" height="60" rx="3" fill="#0a1420" stroke="#1a4d5f" stroke-width="0.8"/>
+    <rect x="218" y="672" width="90" height="60" rx="3" fill="#0a1420" stroke="#1a4d5f" stroke-width="0.8"/>
+    <!-- Feed labels -->
+    <text x="165" y="618" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#ffb830">CAM-01</text>
+    <text x="263" y="618" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#ffb830">CAM-02</text>
+    <text x="165" y="684" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#ffb830">CAM-03</text>
+    <text x="263" y="684" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#ffb830">CAM-04</text>
+    <!-- Scan lines in feeds -->
+    <line x1="120" y1="630" x2="210" y2="630" stroke="#3ec4d8" stroke-width="0.5" opacity="0.3" class="blink"/>
+    <line x1="120" y1="640" x2="210" y2="640" stroke="#3ec4d8" stroke-width="0.5" opacity="0.2"/>
+    <line x1="218" y1="635" x2="308" y2="635" stroke="#3ec4d8" stroke-width="0.5" opacity="0.3" class="blink2"/>
+    <line x1="120" y1="695" x2="210" y2="695" stroke="#3ec4d8" stroke-width="0.5" opacity="0.2"/>
+    <line x1="218" y1="700" x2="308" y2="700" stroke="#3ec4d8" stroke-width="0.5" opacity="0.3" class="blink3"/>
+    <!-- Motion indicator on cam 03 -->
+    <rect x="120" y="672" width="90" height="60" rx="3" fill="#ff8c00" opacity="0.04" class="scan"/>
+    <text x="165" y="724" text-anchor="middle" font-family="Poppins, sans-serif" font-size="6" fill="#ffb830" class="blink">● MOTION</text>
+    <!-- Status bar -->
+    <line x1="120" y1="740" x2="315" y2="740" stroke="#1a4d5f" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="130" cy="748" r="3" fill="#4fdbaa" class="blink" filter="url(#glow-soft)"/>
+    <text x="140" y="752" font-family="Poppins, sans-serif" font-size="8" fill="#4fdbaa">All Systems Secure</text>
+    <text x="217" y="745" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#2a9fb5">Remote &amp; On-site Access</text>
+  </g>
+
+  <!-- ===== NETWORK CONNECTIONS — cameras to NVR ===== -->
+  <!-- CAM-01 to NVR -->
+  <line x1="349" y1="282" x2="1080" y2="650" stroke="#ffb830" stroke-width="1" opacity="0.15"/>
+  <line x1="349" y1="282" x2="1080" y2="650" stroke="#ffb830" stroke-width="1.2" stroke-dasharray="10,10" class="flow" opacity="0.5"/>
+
+  <!-- CAM-04 to NVR -->
+  <line x1="631" y1="283" x2="1080" y2="640" stroke="#ffb830" stroke-width="1" opacity="0.15"/>
+  <line x1="631" y1="283" x2="1080" y2="640" stroke="#ffb830" stroke-width="1.2" stroke-dasharray="10,10" class="flow2" opacity="0.5"/>
+
+  <!-- NVR to Monitor -->
+  <line x1="1080" y1="660" x2="325" y2="660" stroke="#3ec4d8" stroke-width="1" opacity="0.15"/>
+  <line x1="1080" y1="660" x2="325" y2="660" stroke="#3ec4d8" stroke-width="1.5" stroke-dasharray="10,10" class="flow3" opacity="0.6"/>
+
+  <!-- Access panels to monitor -->
+  <line x1="665" y1="600" x2="325" y2="640" stroke="#4fdbaa" stroke-width="1" opacity="0.15"/>
+  <line x1="665" y1="600" x2="325" y2="640" stroke="#4fdbaa" stroke-width="1.2" stroke-dasharray="8,8" class="flow4" opacity="0.5"/>
+
+  <!-- Mobile remote icon -->
+  <g class="float3" filter="url(#shadow)">
+    <rect x="1180" y="480" width="55" height="95" rx="8" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <rect x="1187" y="490" width="41" height="55" rx="3" fill="#0a1420" stroke="#1a4d5f" stroke-width="0.6"/>
+    <!-- Mini cam feed on phone -->
+    <text x="1207" y="503" text-anchor="middle" font-family="Poppins, sans-serif" font-size="6" fill="#ffb830">CAM-01</text>
+    <line x1="1187" y1="513" x2="1228" y2="513" stroke="#3ec4d8" stroke-width="0.5" opacity="0.3" class="blink"/>
+    <line x1="1187" y1="522" x2="1228" y2="522" stroke="#3ec4d8" stroke-width="0.5" opacity="0.2"/>
+    <circle cx="1207" cy="557" r="4" fill="#1a4d5f" stroke="#3ec4d8" stroke-width="0.8"/>
+    <circle cx="1207" cy="557" r="2" fill="#3ec4d8" class="blink2"/>
+    <text x="1207" y="570" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#3ec4d8">Remote</text>
+    <text x="1207" y="580" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#2a9fb5">View</text>
+    <!-- Signal arcs -->
+    <path d="M 1230 500 Q 1238 508 1230 516" fill="none" stroke="#3ec4d8" stroke-width="1.2" stroke-linecap="round" class="blink3"/>
+    <path d="M 1234 495 Q 1246 508 1234 521" fill="none" stroke="#3ec4d8" stroke-width="1"   stroke-linecap="round" class="blink4" opacity="0.6"/>
+  </g>
+
+  <!-- AI Analytics badge on building -->
+  <g class="float" filter="url(#shadow)">
+    <rect x="370" y="450" width="100" height="42" rx="5" fill="url(#panelGrad)" stroke="#ffb830" stroke-width="1.2"/>
+    <text x="420" y="467" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" font-weight="700" fill="#ffb830">AI ANALYTICS</text>
+    <line x1="380" y1="472" x2="460" y2="472" stroke="#7a4010" stroke-width="0.6" opacity="0.5"/>
+    <text x="420" y="484" text-anchor="middle" font-family="Poppins, sans-serif" font-size="7" fill="#cc8820">LPR • People count</text>
+  </g>
+
+  <!-- ===== TOP FEATURE CARDS ===== -->
+  <!-- 6 cards, centered: total = 6*185 + 5*16 = 1110+80=1190, margin=(1400-1190)/2=105 -->
+  <!-- Card 1 -->
+  <g>
+    <rect x="35" y="18" width="190" height="62" rx="7" fill="rgba(62,196,216,0.08)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <text x="130" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" font-weight="700" fill="#4fdbaa">4K IP CAMERAS</text>
+    <line x1="50" y1="47" x2="210" y2="47" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="130" y="61" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">Night vision, motion</text>
+    <text x="130" y="73" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">triggered recording</text>
+  </g>
+  <!-- Card 2 -->
+  <g>
+    <rect x="241" y="18" width="190" height="62" rx="7" fill="rgba(255,184,48,0.08)" stroke="#ffb830" stroke-width="1.2"/>
+    <text x="336" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" font-weight="700" fill="#ffb830">ACCESS CONTROL</text>
+    <line x1="256" y1="47" x2="416" y2="47" stroke="#7a4010" stroke-width="0.8" opacity="0.5"/>
+    <text x="336" y="61" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#cc8820">Key card, biometric</text>
+    <text x="336" y="73" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#cc8820">&amp; mobile credentials</text>
+  </g>
+  <!-- Card 3 -->
+  <g>
+    <rect x="447" y="18" width="190" height="62" rx="7" fill="rgba(62,196,216,0.08)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <text x="542" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" font-weight="700" fill="#4fdbaa">AI ANALYTICS</text>
+    <line x1="462" y1="47" x2="622" y2="47" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="542" y="61" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">License plate recognition</text>
+    <text x="542" y="73" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">&amp; people counting</text>
+  </g>
+  <!-- Card 4 -->
+  <g>
+    <rect x="653" y="18" width="190" height="62" rx="7" fill="rgba(79,219,170,0.08)" stroke="#4fdbaa" stroke-width="1.2"/>
+    <text x="748" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" font-weight="700" fill="#4fdbaa">NVR STORAGE</text>
+    <line x1="668" y1="47" x2="828" y2="47" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="748" y="61" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">Configurable retention</text>
+    <text x="748" y="73" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">policies &amp; audit trail</text>
+  </g>
+  <!-- Card 5 -->
+  <g>
+    <rect x="859" y="18" width="190" height="62" rx="7" fill="rgba(255,184,48,0.08)" stroke="#ffb830" stroke-width="1.2"/>
+    <text x="954" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" font-weight="700" fill="#ffb830">INTRUSION DETECT</text>
+    <line x1="874" y1="47" x2="1034" y2="47" stroke="#7a4010" stroke-width="0.8" opacity="0.5"/>
+    <text x="954" y="61" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#cc8820">Motion zones &amp;</text>
+    <text x="954" y="73" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#cc8820">alarm management</text>
+  </g>
+  <!-- Card 6 -->
+  <g>
+    <rect x="1065" y="18" width="190" height="62" rx="7" fill="rgba(62,196,216,0.08)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <text x="1160" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" font-weight="700" fill="#4fdbaa">UNIFIED PLATFORM</text>
+    <line x1="1080" y1="47" x2="1240" y2="47" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="1160" y="61" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">Single pane of glass</text>
+    <text x="1160" y="73" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" fill="#2a9fb5">on-site or remote</text>
+  </g>
+
+  <!-- ===== BOTTOM BADGES ===== -->
+  <g>
+    <rect x="35" y="830" width="260" height="50" rx="8" fill="rgba(255,184,48,0.08)" stroke="#ffb830" stroke-width="1.5"/>
+    <text x="165" y="851" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" font-weight="700" fill="#ffb830">✓ 4K IP Camera Surveillance</text>
+    <text x="165" y="869" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#cc8820">Night vision &amp; AI-powered analytics</text>
+  </g>
+  <g>
+    <rect x="315" y="830" width="260" height="50" rx="8" fill="rgba(62,196,216,0.1)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <text x="445" y="851" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" font-weight="700" fill="#4fdbaa">✓ Layered Access Control</text>
+    <text x="445" y="869" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#2a9fb5">Card, biometric &amp; mobile credentials</text>
+  </g>
+  <g>
+    <rect x="595" y="830" width="260" height="50" rx="8" fill="rgba(79,219,170,0.1)" stroke="#4fdbaa" stroke-width="1.5"/>
+    <text x="725" y="851" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" font-weight="700" fill="#4fdbaa">✓ Intrusion Detection</text>
+    <text x="725" y="869" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#2a9fb5">Motion zones &amp; alarm response</text>
+  </g>
+  <g>
+    <rect x="875" y="830" width="260" height="50" rx="8" fill="rgba(62,196,216,0.1)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <text x="1005" y="851" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" font-weight="700" fill="#4fdbaa">✓ Remote Monitoring</text>
+    <text x="1005" y="869" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#2a9fb5">Unified platform, any device</text>
+  </g>
+  <g>
+    <rect x="1155" y="830" width="210" height="50" rx="8" fill="rgba(255,184,48,0.08)" stroke="#ffb830" stroke-width="1.5"/>
+    <text x="1260" y="851" text-anchor="middle" font-family="Poppins, sans-serif" font-size="11" font-weight="700" fill="#ffb830">✓ Full Audit Trail</text>
+    <text x="1260" y="869" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" fill="#cc8820">All access events logged</text>
+  </g>
+
+</svg>

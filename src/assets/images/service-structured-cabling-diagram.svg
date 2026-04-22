@@ -1,0 +1,480 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap');
+    </style>
+
+    <!-- Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071820"/>
+      <stop offset="100%" stop-color="#0d2e3d"/>
+    </linearGradient>
+
+    <!-- Floor gradient -->
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f3d50" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#071820" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Fiber strand gradients -->
+    <linearGradient id="fiber1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9f1c" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ff9f1c" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#ffcc70" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ff9f1c" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="fiber2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b9d" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ff6b9d" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ff6b9d" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Copper gradient -->
+    <linearGradient id="copperGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3ec4d8" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#3ec4d8"/>
+      <stop offset="80%" stop-color="#4fdbaa"/>
+      <stop offset="100%" stop-color="#4fdbaa" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Teal gradient -->
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3ec4d8"/>
+      <stop offset="100%" stop-color="#2a9fb5"/>
+    </linearGradient>
+
+    <!-- Green gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4fdbaa"/>
+      <stop offset="100%" stop-color="#3ec4d8"/>
+    </linearGradient>
+
+    <!-- Panel gradient -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#143d52"/>
+      <stop offset="100%" stop-color="#0a2534"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow-teal" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="glow-fiber" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Animations -->
+    <style>
+      @keyframes floatUp {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.6; r: 4; }
+        50% { opacity: 1; r: 6; }
+      }
+      @keyframes flowRight {
+        0%   { stroke-dashoffset: 60; opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { stroke-dashoffset: -60; opacity: 0; }
+      }
+      @keyframes flowDown {
+        0%   { stroke-dashoffset: 50; opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { stroke-dashoffset: -50; opacity: 0; }
+      }
+      @keyframes fiberShimmer {
+        0%   { stroke-dashoffset: 80; opacity: 0; }
+        15%  { opacity: 0.9; }
+        85%  { opacity: 0.9; }
+        100% { stroke-dashoffset: -80; opacity: 0; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+      }
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+      @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50%      { opacity: 0.8; }
+      }
+
+      .float  { animation: floatUp 4s ease-in-out infinite; }
+      .float2 { animation: floatUp 4s ease-in-out infinite; animation-delay: 0.8s; }
+      .float3 { animation: floatUp 4s ease-in-out infinite; animation-delay: 1.6s; }
+
+      .flow-r  { animation: flowRight 2s linear infinite; }
+      .flow-r2 { animation: flowRight 2s linear infinite; animation-delay: 0.4s; }
+      .flow-r3 { animation: flowRight 2s linear infinite; animation-delay: 0.8s; }
+      .flow-d  { animation: flowDown 1.8s linear infinite; }
+      .flow-d2 { animation: flowDown 1.8s linear infinite; animation-delay: 0.5s; }
+
+      .fiber-a { animation: fiberShimmer 1.6s linear infinite; }
+      .fiber-b { animation: fiberShimmer 1.6s linear infinite; animation-delay: 0.3s; }
+      .fiber-c { animation: fiberShimmer 1.6s linear infinite; animation-delay: 0.6s; }
+      .fiber-d { animation: fiberShimmer 1.6s linear infinite; animation-delay: 0.9s; }
+      .fiber-e { animation: fiberShimmer 1.6s linear infinite; animation-delay: 1.2s; }
+
+      .blink  { animation: blink 1.5s ease-in-out infinite; }
+      .blink2 { animation: blink 1.5s ease-in-out infinite; animation-delay: 0.3s; }
+      .blink3 { animation: blink 1.5s ease-in-out infinite; animation-delay: 0.6s; }
+      .blink4 { animation: blink 1.5s ease-in-out infinite; animation-delay: 0.9s; }
+
+      .fade   { animation: fadeInOut 3s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="1400" height="900" fill="url(#bg)"/>
+
+  <!-- Subtle dot grid -->
+  <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+    <circle cx="15" cy="15" r="0.8" fill="#3ec4d8" opacity="0.12"/>
+  </pattern>
+  <rect width="1400" height="900" fill="url(#dots)"/>
+
+  <!-- ===== BUILDING CROSS-SECTION SHELL ===== -->
+  <!-- Main building outline -->
+  <rect x="130" y="100" width="1140" height="680" rx="4" fill="none" stroke="#1a4d5f" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Floor 1 horizontal divider -->
+  <line x1="130" y1="330" x2="1270" y2="330" stroke="#1a4d5f" stroke-width="1" opacity="0.4"/>
+  <!-- Floor 2 horizontal divider -->
+  <line x1="130" y1="560" x2="1270" y2="560" stroke="#1a4d5f" stroke-width="1" opacity="0.4"/>
+
+  <!-- Floor labels -->
+  <text x="148" y="225" font-family="Poppins, sans-serif" font-size="10" fill="#1a6b7f" font-weight="600" letter-spacing="2">FLOOR 2</text>
+  <text x="148" y="450" font-family="Poppins, sans-serif" font-size="10" fill="#1a6b7f" font-weight="600" letter-spacing="2">FLOOR 1</text>
+  <text x="148" y="660" font-family="Poppins, sans-serif" font-size="10" fill="#1a6b7f" font-weight="600" letter-spacing="2">SERVER ROOM</text>
+
+  <!-- Floor fill shading -->
+  <rect x="131" y="101" width="1138" height="228" fill="#0d2e3d" opacity="0.3"/>
+  <rect x="131" y="331" width="1138" height="228" fill="#0a2534" opacity="0.3"/>
+  <rect x="131" y="561" width="1138" height="218" fill="#071e2b" opacity="0.5"/>
+
+  <!-- ===== CABLE TRAY — runs horizontally across each floor ===== -->
+  <!-- Floor 2 tray -->
+  <rect x="200" y="195" width="1000" height="14" rx="3" fill="#0f3d50" stroke="#1a6b7f" stroke-width="1"/>
+  <line x1="210" y1="202" x2="1190" y2="202" stroke="#1a4d5f" stroke-width="1" opacity="0.5"/>
+  <!-- tray supports -->
+  <g stroke="#1a4d5f" stroke-width="1" opacity="0.6">
+    <line x1="300" y1="209" x2="300" y2="225"/>
+    <line x1="500" y1="209" x2="500" y2="225"/>
+    <line x1="700" y1="209" x2="700" y2="225"/>
+    <line x1="900" y1="209" x2="900" y2="225"/>
+    <line x1="1100" y1="209" x2="1100" y2="225"/>
+  </g>
+
+  <!-- Floor 1 tray -->
+  <rect x="200" y="425" width="1000" height="14" rx="3" fill="#0f3d50" stroke="#1a6b7f" stroke-width="1"/>
+  <line x1="210" y1="432" x2="1190" y2="432" stroke="#1a4d5f" stroke-width="1" opacity="0.5"/>
+  <!-- tray supports -->
+  <g stroke="#1a4d5f" stroke-width="1" opacity="0.6">
+    <line x1="300" y1="439" x2="300" y2="455"/>
+    <line x1="500" y1="439" x2="500" y2="455"/>
+    <line x1="700" y1="439" x2="700" y2="455"/>
+    <line x1="900" y1="439" x2="900" y2="455"/>
+    <line x1="1100" y1="439" x2="1100" y2="455"/>
+  </g>
+
+  <!-- Vertical conduit (drops from trays to server room) -->
+  <rect x="688" y="209" width="24" height="355" rx="3" fill="#0f3d50" stroke="#1a6b7f" stroke-width="1" opacity="0.8"/>
+
+  <!-- ===== CABLE BUNDLES IN TRAYS ===== -->
+  <!-- Floor 2 copper cables (teal) — animated -->
+  <line x1="200" y1="198" x2="1200" y2="198" stroke="#3ec4d8" stroke-width="1.5" opacity="0.25"/>
+  <line x1="200" y1="200" x2="1200" y2="200" stroke="#4fdbaa" stroke-width="1.5" opacity="0.25"/>
+  <line x1="200" y1="202" x2="1200" y2="202" stroke="#3ec4d8" stroke-width="1.5" opacity="0.25"/>
+  <line x1="200" y1="204" x2="1200" y2="204" stroke="#2a9fb5" stroke-width="1"   opacity="0.2"/>
+  <line x1="200" y1="206" x2="1200" y2="206" stroke="#4fdbaa" stroke-width="1"   opacity="0.2"/>
+
+  <!-- Animated flow: floor 2 copper -->
+  <line x1="200" y1="198" x2="1200" y2="198" stroke="#4fdbaa" stroke-width="2" stroke-dasharray="25,35" class="flow-r" opacity="0.7"/>
+  <line x1="200" y1="202" x2="1200" y2="202" stroke="#3ec4d8" stroke-width="2" stroke-dasharray="25,35" class="flow-r2" opacity="0.7"/>
+  <line x1="200" y1="206" x2="1200" y2="206" stroke="#4fdbaa" stroke-width="1.5" stroke-dasharray="20,40" class="flow-r3" opacity="0.5"/>
+
+  <!-- Floor 1 copper cables -->
+  <line x1="200" y1="428" x2="1200" y2="428" stroke="#3ec4d8" stroke-width="1.5" opacity="0.25"/>
+  <line x1="200" y1="430" x2="1200" y2="430" stroke="#4fdbaa" stroke-width="1.5" opacity="0.25"/>
+  <line x1="200" y1="432" x2="1200" y2="432" stroke="#3ec4d8" stroke-width="1.5" opacity="0.25"/>
+  <line x1="200" y1="434" x2="1200" y2="434" stroke="#2a9fb5" stroke-width="1"   opacity="0.2"/>
+  <line x1="200" y1="436" x2="1200" y2="436" stroke="#4fdbaa" stroke-width="1"   opacity="0.2"/>
+
+  <line x1="200" y1="428" x2="1200" y2="428" stroke="#4fdbaa" stroke-width="2" stroke-dasharray="25,35" class="flow-r2" opacity="0.7"/>
+  <line x1="200" y1="432" x2="1200" y2="432" stroke="#3ec4d8" stroke-width="2" stroke-dasharray="25,35" class="flow-r3" opacity="0.7"/>
+
+  <!-- Fiber strands in vertical conduit (orange/amber) -->
+  <line x1="693" y1="210" x2="693" y2="560" stroke="#ff9f1c" stroke-width="1.2" opacity="0.3"/>
+  <line x1="697" y1="210" x2="697" y2="560" stroke="#ffcc70" stroke-width="1.2" opacity="0.3"/>
+  <line x1="701" y1="210" x2="701" y2="560" stroke="#ff9f1c" stroke-width="1.2" opacity="0.3"/>
+  <line x1="705" y1="210" x2="705" y2="560" stroke="#ff6b9d" stroke-width="1.2" opacity="0.3"/>
+  <line x1="709" y1="210" x2="709" y2="560" stroke="#ffcc70" stroke-width="1.2" opacity="0.3"/>
+
+  <!-- Animated fiber strands -->
+  <line x1="693" y1="210" x2="693" y2="560" stroke="#ff9f1c" stroke-width="2" stroke-dasharray="20,30" class="fiber-a" opacity="0.85"/>
+  <line x1="697" y1="210" x2="697" y2="560" stroke="#ffcc70" stroke-width="2" stroke-dasharray="20,30" class="fiber-b" opacity="0.85"/>
+  <line x1="701" y1="210" x2="701" y2="560" stroke="#ff6b9d" stroke-width="2" stroke-dasharray="20,30" class="fiber-c" opacity="0.85"/>
+  <line x1="705" y1="210" x2="705" y2="560" stroke="#ff9f1c" stroke-width="1.5" stroke-dasharray="15,35" class="fiber-d" opacity="0.6"/>
+  <line x1="709" y1="210" x2="709" y2="560" stroke="#ffcc70" stroke-width="1.5" stroke-dasharray="15,35" class="fiber-e" opacity="0.6"/>
+
+  <!-- ===== WALL OUTLETS — Floor 2 ===== -->
+  <!-- Outlet 1 -->
+  <g class="float">
+    <rect x="290" y="248" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <circle cx="296" cy="258" r="3" fill="#4fdbaa" class="blink"/>
+    <circle cx="312" cy="258" r="3" fill="#3ec4d8" class="blink2"/>
+    <!-- Drop line to tray -->
+    <line x1="304" y1="209" x2="304" y2="248" stroke="#3ec4d8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d"/>
+  </g>
+
+  <!-- Outlet 2 -->
+  <g class="float2">
+    <rect x="510" y="248" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <circle cx="516" cy="258" r="3" fill="#4fdbaa" class="blink2"/>
+    <circle cx="532" cy="258" r="3" fill="#3ec4d8" class="blink3"/>
+    <line x1="524" y1="209" x2="524" y2="248" stroke="#3ec4d8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d2"/>
+  </g>
+
+  <!-- Outlet 3 -->
+  <g class="float3">
+    <rect x="870" y="248" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#4fdbaa" stroke-width="1.2"/>
+    <circle cx="876" cy="258" r="3" fill="#4fdbaa" class="blink3"/>
+    <circle cx="892" cy="258" r="3" fill="#3ec4d8" class="blink4"/>
+    <line x1="884" y1="209" x2="884" y2="248" stroke="#4fdbaa" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d"/>
+  </g>
+
+  <!-- Outlet 4 -->
+  <g class="float">
+    <rect x="1080" y="248" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <circle cx="1086" cy="258" r="3" fill="#4fdbaa" class="blink4"/>
+    <circle cx="1102" cy="258" r="3" fill="#3ec4d8" class="blink"/>
+    <line x1="1094" y1="209" x2="1094" y2="248" stroke="#3ec4d8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d2"/>
+  </g>
+
+  <!-- ===== WALL OUTLETS — Floor 1 ===== -->
+  <g class="float2">
+    <rect x="290" y="478" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <circle cx="296" cy="488" r="3" fill="#3ec4d8" class="blink"/>
+    <circle cx="312" cy="488" r="3" fill="#4fdbaa" class="blink3"/>
+    <line x1="304" y1="439" x2="304" y2="478" stroke="#3ec4d8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d"/>
+  </g>
+
+  <g class="float">
+    <rect x="510" y="478" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#4fdbaa" stroke-width="1.2"/>
+    <circle cx="516" cy="488" r="3" fill="#4fdbaa" class="blink2"/>
+    <circle cx="532" cy="488" r="3" fill="#3ec4d8" class="blink4"/>
+    <line x1="524" y1="439" x2="524" y2="478" stroke="#4fdbaa" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d2"/>
+  </g>
+
+  <g class="float3">
+    <rect x="870" y="478" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <circle cx="876" cy="488" r="3" fill="#3ec4d8" class="blink3"/>
+    <circle cx="892" cy="488" r="3" fill="#4fdbaa" class="blink"/>
+    <line x1="884" y1="439" x2="884" y2="478" stroke="#3ec4d8" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d"/>
+  </g>
+
+  <g class="float2">
+    <rect x="1080" y="478" width="28" height="20" rx="3" fill="url(#panelGrad)" stroke="#4fdbaa" stroke-width="1.2"/>
+    <circle cx="1086" cy="488" r="3" fill="#4fdbaa" class="blink4"/>
+    <circle cx="1102" cy="488" r="3" fill="#3ec4d8" class="blink2"/>
+    <line x1="1094" y1="439" x2="1094" y2="478" stroke="#4fdbaa" stroke-width="1" stroke-dasharray="3,3" opacity="0.5" class="flow-d2"/>
+  </g>
+
+  <!-- ===== SERVER ROOM / MDF CABINET ===== -->
+  <!-- Cabinet body -->
+  <g filter="url(#shadow)" class="float2">
+    <!-- Main rack enclosure -->
+    <rect x="600" y="585" width="200" height="165" rx="6" fill="url(#panelGrad)" stroke="#3ec4d8" stroke-width="2"/>
+    <!-- Top bar -->
+    <rect x="600" y="585" width="200" height="18" rx="6" fill="#3ec4d8" opacity="0.25"/>
+    <!-- Rack units — patch panels -->
+    <rect x="614" y="612" width="172" height="10" rx="2" fill="#0a2534" stroke="#1a6b7f" stroke-width="0.8"/>
+    <rect x="614" y="626" width="172" height="10" rx="2" fill="#0a2534" stroke="#1a6b7f" stroke-width="0.8"/>
+    <rect x="614" y="640" width="172" height="10" rx="2" fill="#0a2534" stroke="#3ec4d8" stroke-width="0.8"/>
+    <rect x="614" y="654" width="172" height="10" rx="2" fill="#0a2534" stroke="#1a6b7f" stroke-width="0.8"/>
+    <rect x="614" y="668" width="172" height="10" rx="2" fill="#0a2534" stroke="#4fdbaa" stroke-width="0.8"/>
+    <!-- Port dots on patch panels -->
+    <g fill="#3ec4d8" class="blink">
+      <circle cx="624" cy="617" r="2.5"/><circle cx="633" cy="617" r="2.5"/>
+      <circle cx="642" cy="617" r="2.5"/><circle cx="651" cy="617" r="2.5"/>
+      <circle cx="660" cy="617" r="2.5"/><circle cx="669" cy="617" r="2.5"/>
+      <circle cx="678" cy="617" r="2.5"/><circle cx="687" cy="617" r="2.5"/>
+    </g>
+    <g fill="#4fdbaa" class="blink2">
+      <circle cx="624" cy="631" r="2.5"/><circle cx="633" cy="631" r="2.5"/>
+      <circle cx="642" cy="631" r="2.5"/><circle cx="651" cy="631" r="2.5"/>
+      <circle cx="660" cy="631" r="2.5"/><circle cx="669" cy="631" r="2.5"/>
+      <circle cx="678" cy="631" r="2.5"/><circle cx="687" cy="631" r="2.5"/>
+    </g>
+    <g fill="#ff9f1c" class="blink3">
+      <circle cx="624" cy="645" r="2.5"/><circle cx="633" cy="645" r="2.5"/>
+      <circle cx="642" cy="645" r="2.5"/><circle cx="651" cy="645" r="2.5"/>
+    </g>
+    <g fill="#3ec4d8" class="blink4">
+      <circle cx="624" cy="659" r="2.5"/><circle cx="633" cy="659" r="2.5"/>
+      <circle cx="642" cy="659" r="2.5"/><circle cx="651" cy="659" r="2.5"/>
+      <circle cx="660" cy="659" r="2.5"/><circle cx="669" cy="659" r="2.5"/>
+    </g>
+    <g fill="#4fdbaa" class="blink">
+      <circle cx="624" cy="673" r="2.5"/><circle cx="633" cy="673" r="2.5"/>
+      <circle cx="642" cy="673" r="2.5"/>
+    </g>
+    <!-- Cabinet label -->
+    <text x="700" y="720" text-anchor="middle" font-family="Poppins, sans-serif" font-size="10" font-weight="600" fill="#3ec4d8" letter-spacing="1.5">MDF / PATCH PANEL</text>
+    <!-- Status light -->
+    <circle cx="790" cy="594" r="4" fill="#4fdbaa" filter="url(#glow-teal)" class="blink"/>
+  </g>
+
+  <!-- Fiber termination box (right of rack) -->
+  <g class="float3" filter="url(#shadow)">
+    <rect x="830" y="600" width="90" height="70" rx="5" fill="url(#panelGrad)" stroke="#ff9f1c" stroke-width="1.5"/>
+    <text x="875" y="620" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#ff9f1c" font-weight="600">FIBER</text>
+    <text x="875" y="632" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#ff9f1c">TERM.</text>
+    <!-- Fiber port dots -->
+    <g fill="#ff9f1c">
+      <circle cx="848" cy="648" r="3" class="blink"/><circle cx="860" cy="648" r="3" class="blink2"/>
+      <circle cx="872" cy="648" r="3" class="blink3"/><circle cx="884" cy="648" r="3" class="blink4"/>
+      <circle cx="896" cy="648" r="3" class="blink"/><circle cx="908" cy="648" r="3" class="blink2"/>
+    </g>
+    <circle cx="910" cy="608" r="3" fill="#ff9f1c" filter="url(#glow-fiber)" class="blink3"/>
+  </g>
+
+  <!-- Fiber cable from conduit to termination -->
+  <path d="M 700 560 Q 700 580 830 630" fill="none" stroke="#ff9f1c" stroke-width="2" stroke-dasharray="8,8" class="fiber-a" opacity="0.8"/>
+  <path d="M 700 560 Q 700 580 830 635" fill="none" stroke="#ff6b9d" stroke-width="1.5" stroke-dasharray="6,10" class="fiber-c" opacity="0.7"/>
+
+  <!-- ===== LABEL CALLOUTS ===== -->
+  <!-- Cable Tray label -->
+  <g>
+    <line x1="1205" y1="202" x2="1260" y2="180" stroke="#1a6b7f" stroke-width="1" opacity="0.6"/>
+    <text x="1265" y="178" font-family="Poppins, sans-serif" font-size="10" fill="#3ec4d8" font-weight="600">Cable Tray</text>
+  </g>
+  <!-- Copper label -->
+  <g>
+    <line x1="1205" y1="432" x2="1260" y2="410" stroke="#1a6b7f" stroke-width="1" opacity="0.6"/>
+    <text x="1265" y="408" font-family="Poppins, sans-serif" font-size="10" fill="#4fdbaa" font-weight="600">Cat6/Cat6A</text>
+  </g>
+  <!-- Conduit label -->
+  <g>
+    <line x1="712" y1="380" x2="760" y2="360" stroke="#1a6b7f" stroke-width="1" opacity="0.6"/>
+    <text x="764" y="358" font-family="Poppins, sans-serif" font-size="10" fill="#ff9f1c" font-weight="600">Fiber Conduit</text>
+  </g>
+
+  <!-- Outlet callout -->
+  <g>
+    <line x1="318" y1="258" x2="370" y2="238" stroke="#1a6b7f" stroke-width="1" opacity="0.6"/>
+    <text x="374" y="236" font-family="Poppins, sans-serif" font-size="10" fill="#3ec4d8" font-weight="600">Data Outlet</text>
+  </g>
+
+  <!-- ===== SERVICE CALLOUT CARDS — sides ===== -->
+  <!-- Left side: Planning & Design -->
+  <g class="float">
+    <rect x="18" y="140" width="95" height="70" rx="6" fill="rgba(62,196,216,0.08)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <text x="65" y="162" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">PATHWAY</text>
+    <text x="65" y="174" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">PLANNING</text>
+    <line x1="30" y1="182" x2="100" y2="182" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="65" y="196" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">TIA/EIA</text>
+    <text x="65" y="207" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Standards</text>
+  </g>
+
+  <!-- Left side: IP Schema / Labeling -->
+  <g class="float2">
+    <rect x="18" y="370" width="95" height="70" rx="6" fill="rgba(79,219,170,0.08)" stroke="#4fdbaa" stroke-width="1.2"/>
+    <text x="65" y="392" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">LABELING</text>
+    <text x="65" y="404" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">&amp; ID</text>
+    <line x1="30" y1="412" x2="100" y2="412" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="65" y="426" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Color coded</text>
+    <text x="65" y="437" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">cable mgmt</text>
+  </g>
+
+  <!-- Left side: Certification -->
+  <g class="float3">
+    <rect x="18" y="590" width="95" height="70" rx="6" fill="rgba(62,196,216,0.08)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <text x="65" y="612" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">TESTING &amp;</text>
+    <text x="65" y="624" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">CERT.</text>
+    <line x1="30" y1="632" x2="100" y2="632" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="65" y="646" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Fluke/OTDR</text>
+    <text x="65" y="657" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Certified</text>
+  </g>
+
+  <!-- Right side: Fiber Types -->
+  <g class="float">
+    <rect x="1287" y="140" width="95" height="70" rx="6" fill="rgba(255,159,28,0.08)" stroke="#ff9f1c" stroke-width="1.2"/>
+    <text x="1334" y="162" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#ff9f1c">FIBER OPTIC</text>
+    <line x1="1300" y1="170" x2="1370" y2="170" stroke="#7a4010" stroke-width="0.8" opacity="0.5"/>
+    <text x="1334" y="183" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#cc8820">Single-mode</text>
+    <text x="1334" y="195" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#cc8820">Multi-mode</text>
+    <text x="1334" y="206" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#cc8820">OS2 / OM4</text>
+  </g>
+
+  <!-- Right side: Copper -->
+  <g class="float2">
+    <rect x="1287" y="370" width="95" height="70" rx="6" fill="rgba(62,196,216,0.08)" stroke="#3ec4d8" stroke-width="1.2"/>
+    <text x="1334" y="392" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">COPPER</text>
+    <line x1="1300" y1="400" x2="1370" y2="400" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="1334" y="413" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Cat6 / Cat6A</text>
+    <text x="1334" y="425" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">10GbE ready</text>
+    <text x="1334" y="437" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Shielded/UTP</text>
+  </g>
+
+  <!-- Right side: As-Built Docs -->
+  <g class="float3">
+    <rect x="1287" y="590" width="95" height="70" rx="6" fill="rgba(79,219,170,0.08)" stroke="#4fdbaa" stroke-width="1.2"/>
+    <text x="1334" y="612" text-anchor="middle" font-family="Poppins, sans-serif" font-size="9" font-weight="700" fill="#4fdbaa">WARRANTY</text>
+    <line x1="1300" y1="620" x2="1370" y2="620" stroke="#1a6b7f" stroke-width="0.8" opacity="0.5"/>
+    <text x="1334" y="634" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">Mfr. backed</text>
+    <text x="1334" y="646" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">components</text>
+    <text x="1334" y="657" text-anchor="middle" font-family="Poppins, sans-serif" font-size="8" fill="#2a9fb5">As-built docs</text>
+  </g>
+
+  <!-- ===== BOTTOM FEATURE BADGES ===== -->
+  <g>
+    <rect x="30" y="810" width="300" height="60" rx="8" fill="rgba(62, 196, 216, 0.1)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <text x="50" y="836" font-family="Poppins, sans-serif" font-size="12" font-weight="700" fill="#4fdbaa">✓ TIA/EIA Standards Compliant</text>
+    <text x="50" y="858" font-family="Poppins, sans-serif" font-size="11" fill="#2a9fb5">Meets industry certification requirements</text>
+  </g>
+
+  <g>
+    <rect x="360" y="810" width="300" height="60" rx="8" fill="rgba(79, 219, 170, 0.1)" stroke="#4fdbaa" stroke-width="1.5"/>
+    <text x="380" y="836" font-family="Poppins, sans-serif" font-size="12" font-weight="700" fill="#4fdbaa">✓ Copper &amp; Fiber Solutions</text>
+    <text x="380" y="858" font-family="Poppins, sans-serif" font-size="11" fill="#2a9fb5">Cat6/6A, single &amp; multi-mode fiber</text>
+  </g>
+
+  <g>
+    <rect x="690" y="810" width="300" height="60" rx="8" fill="rgba(62, 196, 216, 0.1)" stroke="#3ec4d8" stroke-width="1.5"/>
+    <text x="710" y="836" font-family="Poppins, sans-serif" font-size="12" font-weight="700" fill="#4fdbaa">✓ Tested &amp; Certified</text>
+    <text x="710" y="858" font-family="Poppins, sans-serif" font-size="11" fill="#2a9fb5">Full certification &amp; as-built documentation</text>
+  </g>
+
+  <g>
+    <rect x="1020" y="810" width="350" height="60" rx="8" fill="rgba(79, 219, 170, 0.1)" stroke="#4fdbaa" stroke-width="1.5"/>
+    <text x="1040" y="836" font-family="Poppins, sans-serif" font-size="12" font-weight="700" fill="#4fdbaa">✓ Enterprise-Grade Components</text>
+    <text x="1040" y="858" font-family="Poppins, sans-serif" font-size="11" fill="#2a9fb5">Future-ready design built for growth &amp; scalability</text>
+  </g>
+
+  <!-- ===== LEGEND ===== -->
+  <g opacity="0.75">
+    <line x1="580" y1="780" x2="615" y2="780" stroke="#3ec4d8" stroke-width="2.5" stroke-dasharray="8,5"/>
+    <text x="625" y="784" font-family="Poppins, sans-serif" font-size="10" fill="#3ec4d8">Copper (Cat6/6A)</text>
+    <line x1="780" y1="780" x2="815" y2="780" stroke="#ff9f1c" stroke-width="2.5" stroke-dasharray="6,5"/>
+    <text x="825" y="784" font-family="Poppins, sans-serif" font-size="10" fill="#ff9f1c">Fiber Optic</text>
+  </g>
+</svg>
