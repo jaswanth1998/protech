@@ -3,11 +3,19 @@
 // PLACEHOLDER — all content below is developer-generated placeholder text.
 // Replace with client-approved copy before launch.
 
+import networkDiagram from '@/assets/images/service-network-diagram.svg';
+import structuredCablingDiagram from '@/assets/images/service-structured-cabling-diagram.svg';
+import wirelessDiagram from '@/assets/images/service-wireless-diagram.svg';
+import voipDiagram from '@/assets/images/service-voip-diagram.svg';
+import securityDiagram from '@/assets/images/service-security-diagram.svg';
+import managedItDiagram from '@/assets/images/service-managed-it-diagram.svg';
+import cloudDiagram from '@/assets/images/service-cloud-diagram.svg';
+
 export const services = [
   {
     slug: 'network-infrastructure',
     name: 'Network Infrastructure',
-    svgDiagram: '../../assets/images/service-network-diagram.svg',
+    svgDiagram: networkDiagram,
     icon: 'LuNetwork',
     tagline: 'Robust network solutions built for performance and reliability', // PLACEHOLDER
     shortDescription:
@@ -81,7 +89,7 @@ export const services = [
   {
     slug: 'structured-cabling',
     name: 'Structured Cabling & Fiber',
-    svgDiagram: '../../assets/images/service-structured-cabling-diagram.svg',
+    svgDiagram: structuredCablingDiagram,
     icon: 'LuCable',
     tagline: 'Professional cabling solutions for seamless connectivity', // PLACEHOLDER
     shortDescription:
@@ -156,7 +164,7 @@ export const services = [
     slug: 'wifi-wireless',
     name: 'Wi-Fi & Wireless Solutions',
     icon: 'LuWifi',
-    svgDiagram: '../../assets/images/service-wireless-diagram.svg',
+    svgDiagram: wirelessDiagram,
     tagline: 'Reliable wireless coverage for every corner of your space', // PLACEHOLDER
     shortDescription:
       'Enterprise Wi-Fi design, deployment, and optimization ensuring seamless connectivity across your entire facility.', // PLACEHOLDER
@@ -230,7 +238,7 @@ export const services = [
     slug: 'voip-unified-comms',
     name: 'VoIP & Unified Communications',
     icon: 'LuPhone',
-    svgDiagram: '../../assets/images/service-voip-diagram.svg',
+    svgDiagram: voipDiagram,
     tagline: 'Modern communication systems that keep your team connected', // PLACEHOLDER
     shortDescription:
       'VoIP phone systems and unified communications platforms that streamline collaboration and reduce costs.', // PLACEHOLDER
@@ -304,7 +312,7 @@ export const services = [
     slug: 'cctv-security',
     name: 'CCTV & Physical Security',
     icon: 'LuShield',
-    svgDiagram: '../../assets/images/service-security-diagram.svg',
+    svgDiagram: securityDiagram,
     tagline: 'Comprehensive security systems to protect what matters most', // PLACEHOLDER
     shortDescription:
       'IP-based CCTV, access control, and physical security systems designed to safeguard your premises and assets.', // PLACEHOLDER
@@ -379,7 +387,7 @@ export const services = [
     name: 'Managed IT & Field Services',
     icon: 'LuHeadset',
     tagline: 'Proactive IT support so you can focus on your business', // PLACEHOLDER
-    svgDiagram: '../../assets/images/service-managed-it-diagram.svg',
+    svgDiagram: managedItDiagram,
     shortDescription:
       'Ongoing IT management, monitoring, and on-site field services to keep your technology running smoothly.', // PLACEHOLDER
     // PLACEHOLDER
@@ -453,7 +461,7 @@ export const services = [
     name: 'Cloud & Hybrid Cloud',
     icon: 'LuCloud',
     tagline: 'Scalable cloud solutions tailored to your workload', // PLACEHOLDER
-    svgDiagram: '../../assets/images/service-cloud-diagram.svg',
+    svgDiagram: cloudDiagram,
     shortDescription:
       'Cloud migration, hybrid cloud architecture, and managed cloud services that scale with your business demands.', // PLACEHOLDER
     // PLACEHOLDER
@@ -526,7 +534,7 @@ export const services = [
     slug: 'project-management',
     name: 'Project Management & Deployment',
     icon: 'LuClipboardList',
-    svgDiagram: '../../assets/images/service-project-management-diagram.svg',
+    svgDiagram: null,
     tagline: 'Expert project delivery from planning to go-live', // PLACEHOLDER
     shortDescription:
       'Full-lifecycle IT project management ensuring on-time, on-budget delivery of complex technology deployments.', // PLACEHOLDER

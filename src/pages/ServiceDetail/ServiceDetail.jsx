@@ -68,7 +68,9 @@ function ServiceDetail() {
       {/* Section 2: Service Overview */}
       <section className="bg-white py-16 md:py-20 lg:py-24">
         <Container>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <div
+            className={`grid grid-cols-1 items-center gap-12 ${service.svgDiagram ? 'lg:grid-cols-2' : ''}`}
+          >
             <div>
               <h2 className="font-heading text-3xl font-bold text-navy-dark">Overview</h2>
               <div className="mt-4 h-1 w-16 rounded-full bg-primary" />
@@ -76,14 +78,16 @@ function ServiceDetail() {
                 {service.description || service.shortDescription}
               </p>
             </div>
-            <div className="flex items-center justify-center">
-              {/* Service feature image — zoomable for readable diagrams */}
-              <ZoomableImage
-                src={new URL(service.svgDiagram, import.meta.url).href}
-                alt={`${service.name} service diagram`}
-                className="h-72 w-full rounded-2xl bg-gray-50 shadow-inner lg:h-80"
-              />
-            </div>
+            {service.svgDiagram && (
+              <div className="flex items-center justify-center">
+                {/* Service feature image — zoomable for readable diagrams */}
+                <ZoomableImage
+                  src={service.svgDiagram}
+                  alt={`${service.name} service diagram`}
+                  className="h-72 w-full rounded-2xl bg-gray-50 shadow-inner lg:h-80"
+                />
+              </div>
+            )}
           </div>
         </Container>
       </section>
