@@ -9,6 +9,7 @@ import wirelessDiagram from '@/assets/images/service-wireless-diagram.svg';
 import voipDiagram from '@/assets/images/service-voip-diagram.svg';
 import securityDiagram from '@/assets/images/service-security-diagram.svg';
 import managedItDiagram from '@/assets/images/service-managed-it-diagram.svg';
+import fieldDiagram from '@/assets/images/service-field-diagram.svg';
 import cloudDiagram from '@/assets/images/service-cloud-diagram.svg';
 
 export const services = [
@@ -384,15 +385,14 @@ export const services = [
   },
   {
     slug: 'managed-it-support',
-    name: 'Managed IT & Field Services',
+    name: 'Managed IT Services',
     icon: 'LuHeadset',
-    tagline: 'Proactive IT support so you can focus on your business', // PLACEHOLDER
+    tagline: 'Proactive IT management so your business never skips a beat',
     svgDiagram: managedItDiagram,
     shortDescription:
-      'Ongoing IT management, monitoring, and on-site field services to keep your technology running smoothly.', // PLACEHOLDER
-    // PLACEHOLDER
+      'Proactive monitoring, maintenance, and support that keeps your systems healthy, secure, and performing at their best — 24/7.',
     description:
-      "Technology should empower your business, not slow it down. Pro-Tech's managed IT services provide proactive monitoring, maintenance, and support so you can focus on running your business while we keep your systems healthy and secure.\n\nOur team monitors your network, servers, and endpoints around the clock, catching and resolving issues before they impact your operations. From patch management and backup verification to security updates and performance tuning, we handle the day-to-day IT operations your business depends on.\n\nWhen on-site support is needed, our field service technicians are dispatched quickly to handle hardware installations, equipment moves, troubleshooting, and break-fix work. We maintain detailed asset inventories and service histories so every visit is informed and efficient.\n\nWith flexible service plans ranging from basic monitoring to fully managed IT, Pro-Tech scales our support to match your needs and budget. You get enterprise-level IT expertise without the overhead of a full in-house team.",
+      "Technology should work for your business — not the other way around. Pro-Tech's Managed IT Services deliver proactive monitoring, maintenance, and support that keeps your systems healthy, secure, and performing at their best around the clock.\n\nOur team monitors your network, servers, and endpoints 24/7, catching and resolving issues before they ever impact your operations. From patch management and backup verification to security updates and performance tuning, we handle the day-to-day IT operations your business depends on — so you don't have to.\n\nEvery managed client gets a dedicated service plan tailored to their environment, with clearly defined response times, regular reporting, and a single point of contact who knows your infrastructure inside and out. We maintain detailed asset inventories and service histories so support is always informed, never reactive.\n\nWith flexible plans ranging from basic monitoring to fully managed IT, Pro-Tech scales our support to match your needs and budget — giving you enterprise-level IT expertise without the overhead of building and maintaining an in-house team.",
     // PLACEHOLDER
     features: [
       {
@@ -454,7 +454,96 @@ export const services = [
       },
     ],
     relatedIndustries: ['healthcare', 'finance', 'education'],
-    relatedServices: ['network-infrastructure', 'cloud-hybrid-cloud'],
+    relatedServices: ['field-services', 'network-infrastructure', 'cloud-hybrid-cloud'],
+  },
+  {
+    slug: 'field-services',
+    name: 'Field Services',
+    icon: 'LuMapPin',
+    tagline: 'Boots on the ground, coast to coast',
+    svgDiagram: fieldDiagram,
+    shortDescription:
+      'Dispatched technicians across 10 provinces for hardware installations, moves, break-fix, and on-site troubleshooting — 24/7.',
+    description:
+      "When technology needs hands-on attention, Pro-Tech delivers. Our field service technicians are dispatched quickly across 10 provinces — from British Columbia to Newfoundland — to handle hardware installations, equipment moves, break-fix work, and on-site troubleshooting with the same professionalism and expertise you expect from our managed services.\n\nWe operate 24/7, including after-hours and emergency dispatch, because we understand that downtime doesn't follow a schedule. Whether it's a critical server failure at midnight or a planned office relocation on a weekend, our technicians arrive prepared — equipped with the right tools and a complete history of your environment.\n\nEvery field visit is backed by detailed asset inventories and service records, so our technicians arrive informed and your team stays in control. We don't just fix the issue — we document it, learn from it, and use that knowledge to make every future visit faster and more efficient.\n\nFrom single-site deployments to multi-location rollouts spanning multiple provinces, Pro-Tech Field Services gives you enterprise-grade, on-the-ground IT support without the cost of building and managing your own regional teams.",
+    features: [
+      {
+        icon: 'LuMap',
+        title: 'Multi-Province Coverage',
+        description:
+          'Certified technicians deployed across 10 provinces — BC, AB, SK, MB, ON, QC, NB, NS, PEI, and NL. One vendor, one point of contact, coast to coast.',
+      },
+      {
+        icon: 'LuZap',
+        title: '24/7 Emergency Dispatch',
+        description:
+          "After-hours, weekend, and holiday dispatch available across all provinces. When something breaks at the worst possible time, we're already on the way.",
+      },
+      {
+        icon: 'LuServer',
+        title: 'Hardware Installation & Rack/Stack',
+        description:
+          'Full hardware deployment services including server rack installation, network equipment mounting, cable management, and end-user device setup.',
+      },
+      {
+        icon: 'LuTruck',
+        title: 'Equipment Moves & Relocations',
+        description:
+          'Planned office moves, equipment relocations, and multi-site deployments handled end-to-end with zero guesswork and minimal downtime.',
+      },
+      {
+        icon: 'LuWrench',
+        title: 'Break-Fix & Troubleshooting',
+        description:
+          'Fast diagnosis and repair of failed hardware, connectivity issues, and on-site technical problems — with a focus on first-visit resolution.',
+      },
+      {
+        icon: 'LuClipboardCheck',
+        title: 'Site Surveys & Assessments',
+        description:
+          'Pre-deployment site walks, infrastructure assessments, and cabling surveys to ensure every project starts with accurate, actionable information.',
+      },
+      {
+        icon: 'LuPackage',
+        title: 'Asset Tagging & Inventory Management',
+        description:
+          'Every device tagged, catalogued, and entered into your asset register. Full visibility into what you own, where it is, and when it was last serviced.',
+      },
+      {
+        icon: 'LuFileText',
+        title: 'Detailed Service History',
+        description:
+          "Every visit documented with technician notes, photos, and resolution details. Your environment's complete service record — always accessible, always current.",
+      },
+    ],
+    approach: [
+      {
+        step: 1,
+        title: 'Dispatch',
+        description:
+          "Work order received; a certified technician is assigned with the right tools and your site's service history in hand.",
+      },
+      {
+        step: 2,
+        title: 'Arrive',
+        description:
+          'Technician arrives on site, confirms scope with your team, and verifies safety, access, and equipment requirements.',
+      },
+      {
+        step: 3,
+        title: 'Resolve',
+        description:
+          'Work executed to spec — installation, repair, or relocation — with quality checks and sign-off before we leave.',
+      },
+      {
+        step: 4,
+        title: 'Document',
+        description:
+          'Visit notes, photos, and asset changes logged to your service record so every future visit is informed.',
+      },
+    ],
+    relatedIndustries: ['retail', 'government', 'industrial'],
+    relatedServices: ['managed-it-support', 'network-infrastructure', 'structured-cabling'],
   },
   {
     slug: 'cloud-hybrid-cloud',
@@ -467,37 +556,54 @@ export const services = [
     // PLACEHOLDER
     description:
       "The cloud offers unmatched flexibility and scalability, but getting there requires careful planning and execution. Pro-Tech helps businesses migrate to the cloud, architect hybrid environments, and manage cloud workloads so you can focus on innovation rather than infrastructure.\n\nWe work with Microsoft Azure, Amazon Web Services, and Google Cloud Platform to design cloud solutions that match your workload requirements, compliance needs, and budget. Whether you are moving a single application or your entire data center, our cloud architects create a migration roadmap that minimizes risk and downtime.\n\nFor organizations that need to keep some workloads on-premises, we design hybrid cloud architectures that seamlessly connect your local infrastructure with cloud resources. Unified management tools give your team a single view across all environments.\n\nPro-Tech's managed cloud services take the complexity out of day-to-day cloud operations. We handle provisioning, monitoring, cost optimization, security, and compliance so your team can focus on building and deploying applications that drive business value.",
-    // PLACEHOLDER
     features: [
       {
-        icon: 'LuCloudUpload',
-        title: 'Cloud Migration',
+        icon: 'LuCloud',
+        title: 'Multi-Cloud Architecture',
         description:
-          'Structured migration from on-premises to cloud with assessment, planning, execution, and validation phases.',
+          'We design and deploy across Microsoft Azure, Amazon Web Services, and Google Cloud Platform — choosing the right platform for each workload rather than locking you into a single vendor.',
       },
       {
-        icon: 'LuLayers',
-        title: 'Hybrid Architecture',
+        icon: 'LuLink',
+        title: 'Hybrid Cloud Design',
         description:
-          'Seamless integration of on-premises and cloud environments with unified management and consistent security policies.',
+          'For workloads that need to stay on-premises — whether for compliance, latency, or cost reasons — we architect seamless hybrid environments that connect your local infrastructure with cloud resources through secure, high-performance links.',
+      },
+      {
+        icon: 'LuRocket',
+        title: 'Cloud Migration Planning',
+        description:
+          'Every migration starts with a thorough assessment of your current environment. We build a detailed migration roadmap that prioritizes workloads, minimizes risk, and ensures zero unplanned downtime.',
+      },
+      {
+        icon: 'LuBot',
+        title: 'AI & ML Integration',
+        description:
+          'We help you leverage intelligent cloud services — Azure OpenAI, AWS Bedrock, Google Vertex AI and more — to embed AI-powered capabilities directly into your cloud workloads and business applications.',
       },
       {
         icon: 'LuDollarSign',
-        title: 'Cost Optimization',
+        title: 'Cloud Cost Optimization',
         description:
-          'Right-sizing, reserved instance planning, and automated scaling to control cloud spend without sacrificing performance.',
+          'Cloud bills spiral without proper governance. We implement rightsizing, reserved instance planning, auto-scaling policies, and tagging frameworks so you only pay for what you actually use.',
       },
       {
         icon: 'LuShieldCheck',
-        title: 'Cloud Security',
+        title: 'Security & Compliance',
         description:
-          'Identity management, encryption, compliance monitoring, and security best practices across all cloud platforms.',
+          'Every cloud environment we build follows Zero Trust principles, with identity-based access controls, encryption at rest and in transit, and compliance alignment for standards like SOC 2, ISO 27001, and PIPEDA.',
       },
       {
-        icon: 'LuContainer',
-        title: 'Containers & DevOps',
+        icon: 'LuLayoutDashboard',
+        title: 'Unified Management',
         description:
-          'Docker and Kubernetes orchestration, CI/CD pipelines, and infrastructure-as-code for modern application delivery.',
+          'A single pane of glass across all your environments — cloud, hybrid, and on-premises — so your team has full visibility into performance, costs, security posture, and compliance status at all times.',
+      },
+      {
+        icon: 'LuSettings',
+        title: 'Managed Cloud Operations',
+        description:
+          'Once deployed, we handle the day-to-day — provisioning, patching, monitoring, backup verification, and incident response — so your internal team stays focused on building and delivering business value.',
       },
     ],
     // PLACEHOLDER

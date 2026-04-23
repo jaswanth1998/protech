@@ -65,6 +65,12 @@ import {
   LuDatabase,
   LuUser,
   LuHouse,
+  LuMap,
+  LuTruck,
+  LuPackage,
+  LuLink,
+  LuRocket,
+  LuBot,
 } from 'react-icons/lu';
 
 const iconMap = {
@@ -137,6 +143,12 @@ const iconMap = {
   LuUser,
   LuHouse,
   LuHome: LuHouse,
+  LuMap,
+  LuTruck,
+  LuPackage,
+  LuLink,
+  LuRocket,
+  LuBot,
 };
 
 const sizeMap = {
