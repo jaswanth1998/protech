@@ -99,7 +99,31 @@ function Home() {
 
       {/* Section 2: Trusted By / Partners */}
       <LogoStrip logos={partnerLogos} title="Technologies We Work With" />
-
+      {/* Section 6: Stats / Impact */}
+      <section className="gradient-navy-radial relative overflow-hidden py-16 md:py-20 lg:py-24">
+        <div className="hero-dot-pattern absolute inset-0" aria-hidden="true" />
+        <Container className="relative z-10">
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+            {stats.map((stat, index) => (
+              <div key={stat.label} className="relative">
+                <StatCounter
+                  value={stat.value}
+                  label={stat.label}
+                  suffix={stat.suffix}
+                  prefix={stat.prefix}
+                />
+                {/* Divider (not on last item, desktop only) */}
+                {index < stats.length - 1 && (
+                  <div
+                    className="absolute -right-4 top-1/2 hidden h-12 w-px -translate-y-1/2 bg-white/10 lg:block"
+                    aria-hidden="true"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
       {/* Section 3: Services Overview */}
       <section className="bg-white py-16 md:py-20 lg:py-24">
         <Container>
@@ -179,32 +203,6 @@ function Home() {
             <Button href="/industries" variant="ghost">
               See All Industries &rarr;
             </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* Section 6: Stats / Impact */}
-      <section className="gradient-navy-radial relative overflow-hidden py-16 md:py-20 lg:py-24">
-        <div className="hero-dot-pattern absolute inset-0" aria-hidden="true" />
-        <Container className="relative z-10">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {stats.map((stat, index) => (
-              <div key={stat.label} className="relative">
-                <StatCounter
-                  value={stat.value}
-                  label={stat.label}
-                  suffix={stat.suffix}
-                  prefix={stat.prefix}
-                />
-                {/* Divider (not on last item, desktop only) */}
-                {index < stats.length - 1 && (
-                  <div
-                    className="absolute -right-4 top-1/2 hidden h-12 w-px -translate-y-1/2 bg-white/10 lg:block"
-                    aria-hidden="true"
-                  />
-                )}
-              </div>
-            ))}
           </div>
         </Container>
       </section>

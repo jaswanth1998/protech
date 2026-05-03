@@ -58,6 +58,7 @@ function CTABanner({ headline, subtitle, primaryCTA, secondaryCTA, variant = 'da
               href={primaryCTA.to}
               variant={variant === 'green' ? 'secondary' : 'primary'}
               size="lg"
+              className="hover:scale-110"
             >
               {primaryCTA.label}
             </Button>

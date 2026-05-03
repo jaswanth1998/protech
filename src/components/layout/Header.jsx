@@ -87,7 +87,7 @@ function Header() {
               href={ctaButton.path}
               variant="primary"
               size="sm"
-              className="hidden lg:inline-flex"
+              className="hidden lg:inline-flex hover:scale-110"
             >
               {ctaButton.label}
             </Button>

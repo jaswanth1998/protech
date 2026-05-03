@@ -11,6 +11,7 @@ import securityDiagram from '@/assets/images/service-security-diagram.svg';
 import managedItDiagram from '@/assets/images/service-managed-it-diagram.svg';
 import fieldDiagram from '@/assets/images/service-field-diagram.svg';
 import cloudDiagram from '@/assets/images/service-cloud-diagram.svg';
+import projectManagementDiagram from '@/assets/images/service-project-management-diagram.svg';
 
 export const services = [
   {
@@ -640,7 +641,7 @@ export const services = [
     slug: 'project-management',
     name: 'Project Management & Deployment',
     icon: 'LuClipboardList',
-    svgDiagram: null,
+    svgDiagram: projectManagementDiagram,
     tagline: 'Expert project delivery from planning to go-live', // PLACEHOLDER
     shortDescription:
       'Full-lifecycle IT project management ensuring on-time, on-budget delivery of complex technology deployments.', // PLACEHOLDER
