@@ -19,10 +19,10 @@ function LogoStrip({ logos = [], title }) {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-8 w-auto grayscale transition-all hover:grayscale-0"
+                  className="h-12 w-auto grayscale transition-all hover:grayscale-0 md:h-14"
                   loading="lazy"
-                  width={120}
-                  height={32}
+                  width={180}
+                  height={48}
                 />
               ) : (
                 <span className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-bold tracking-wide text-navy-light shadow-sm">
