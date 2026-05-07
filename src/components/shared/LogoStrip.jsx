@@ -13,13 +13,13 @@ function LogoStrip({ logos = [], title }) {
           {logos.map((logo) => (
             <div
               key={logo.alt}
-              className="opacity-50 transition-all duration-300 hover:opacity-100"
+              className={`${logo.opacityClass ?? 'opacity-50'} transition-all duration-300 hover:opacity-100`}
             >
               {logo.src ? (
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-12 w-auto grayscale transition-all hover:grayscale-0 md:h-14"
+                  className={`${logo.sizeClass ?? 'h-12 md:h-14'} w-auto grayscale transition-all hover:grayscale-0`}
                   loading="lazy"
                   width={180}
                   height={48}

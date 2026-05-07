@@ -33,14 +33,14 @@ const partnerLogos = [
   { src: microsoftLogo, alt: 'Microsoft' },
   { src: fortinetLogo, alt: 'Fortinet' },
   { src: hpLogo, alt: 'HP' },
-  { src: vmwareLogo, alt: 'VMware' },
+  { src: vmwareLogo, alt: 'VMware', sizeClass: 'h-16 md:h-20' },
   { src: awsLogo, alt: 'AWS' },
-  { src: juniperLogo, alt: 'Juniper' },
+  { src: juniperLogo, alt: 'Juniper', sizeClass: 'h-16 md:h-20', opacityClass: 'opacity-100' },
   { src: paloaltoLogo, alt: 'Palo Alto Networks' },
-  { src: lenovoLogo, alt: 'Lenovo' },
+  { src: lenovoLogo, alt: 'Lenovo', sizeClass: 'h-14 md:h-16' },
   { src: azureLogo, alt: 'Azure' },
-  { src: googleCloudLogo, alt: 'Google Cloud' },
-  { src: oracleLogo, alt: 'Oracle' },
+  { src: googleCloudLogo, alt: 'Google Cloud', sizeClass: 'h-12 md:h-16' },
+  { src: oracleLogo, alt: 'Oracle', sizeClass: 'h-7 md:h-8' },
 ];
 
 const whyChooseUs = [
