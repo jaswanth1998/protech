@@ -9,7 +9,6 @@ import vmwareLogo from '@/assets/images/logos/vmware.svg';
 import awsLogo from '@/assets/images/logos/aws.svg';
 import juniperLogo from '@/assets/images/logos/juniper.svg';
 import paloaltoLogo from '@/assets/images/logos/paloalto.svg';
-import lenovoLogo from '@/assets/images/logos/lenovo.svg';
 import azureLogo from '@/assets/images/logos/azure.svg';
 import googleCloudLogo from '@/assets/images/logos/google-cloud.svg';
 import oracleLogo from '@/assets/images/logos/oracle.svg';
@@ -37,7 +36,6 @@ const partnerLogos = [
   { src: awsLogo, alt: 'AWS' },
   { src: juniperLogo, alt: 'Juniper', sizeClass: 'h-16 md:h-20', opacityClass: 'opacity-100' },
   { src: paloaltoLogo, alt: 'Palo Alto Networks' },
-  { src: lenovoLogo, alt: 'Lenovo', sizeClass: 'h-14 md:h-16' },
   { src: azureLogo, alt: 'Azure' },
   { src: googleCloudLogo, alt: 'Google Cloud', sizeClass: 'h-12 md:h-16' },
   { src: oracleLogo, alt: 'Oracle', sizeClass: 'h-7 md:h-8' },
