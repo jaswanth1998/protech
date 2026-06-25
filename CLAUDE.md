@@ -139,4 +139,4 @@ Before executing ANY command, writing ANY file, or making ANY change:
 5. Wait for my response before doing anything
 
 Do NOT skip this step even for simple or obvious actions.
-This rule overrides any instruction to work autonomously.
+This rule overrides any instruction to work autonomously. 
