@@ -49,8 +49,8 @@ function Services() {
   return (
     <>
       <SEO
-        title="IT Services & Solutions · Pro-Tech IT Consulting"
-        description="Explore Pro-Tech's comprehensive IT services: network infrastructure, structured cabling, Wi-Fi, VoIP, CCTV security, managed IT, cloud solutions, and project management."
+        title="IT Services in Dartmouth & Halifax, NS · Pro-Tech IT Consulting"
+        description="Pro-Tech's IT services across Dartmouth, Halifax and Nova Scotia: network infrastructure, structured cabling, Ekahau Wi-Fi surveys, VoIP, CCTV, managed IT, cloud, and field services."
       />
 
       {/* Section 1: Page Hero */}

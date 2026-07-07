@@ -17,6 +17,10 @@ export const services = [
   {
     slug: 'network-infrastructure',
     name: 'Network Infrastructure',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle: 'Network Infrastructure in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'Enterprise LAN/WAN, SD-WAN, and network design, deployment and support for businesses across Dartmouth, Halifax and Nova Scotia. Cisco, Juniper & Aruba certified.',
     svgDiagram: networkDiagram,
     icon: 'LuNetwork',
     tagline: 'Robust network solutions built for performance and reliability', // PLACEHOLDER
@@ -91,6 +95,10 @@ export const services = [
   {
     slug: 'structured-cabling',
     name: 'Structured Cabling & Fiber',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle: 'Structured Cabling & Fiber in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'Cat6/Cat6A and fiber optic structured cabling installation, testing and certification for offices and data centers across Dartmouth, Halifax and Nova Scotia.',
     svgDiagram: structuredCablingDiagram,
     icon: 'LuCable',
     tagline: 'Professional cabling solutions for seamless connectivity', // PLACEHOLDER
@@ -165,6 +173,11 @@ export const services = [
   {
     slug: 'wifi-wireless',
     name: 'Wi-Fi & Wireless Solutions',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle:
+      'Ekahau Wi-Fi Surveys & Wireless Design in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'Ekahau AI Pro predictive design and passive validation Wi-Fi surveys, plus enterprise Wi-Fi 6/6E deployment across Dartmouth, Halifax and Nova Scotia.',
     icon: 'LuWifi',
     svgDiagram: wirelessDiagram,
     tagline: 'Reliable wireless coverage for every corner of your space', // PLACEHOLDER
@@ -172,14 +185,14 @@ export const services = [
       'Enterprise Wi-Fi design, deployment, and optimization ensuring seamless connectivity across your entire facility.', // PLACEHOLDER
     // PLACEHOLDER
     description:
-      "In today's mobile-first workplace, reliable Wi-Fi is not a luxury — it is a necessity. Pro-Tech designs and deploys enterprise wireless networks that deliver consistent, high-speed coverage across your entire facility, from open offices to warehouse floors.\n\nWe use predictive heat-mapping tools and on-site RF surveys to design wireless networks that eliminate dead zones and co-channel interference. Our solutions leverage Wi-Fi 6 and Wi-Fi 6E technology from vendors like Cisco Meraki, Aruba, and Ruckus to support high-density environments with hundreds or thousands of concurrent devices.\n\nSecurity is built into every wireless deployment. We implement WPA3 encryption, 802.1X authentication, guest network segmentation, and rogue AP detection to protect your network from unauthorized access and threats.\n\nWhether you need to cover a single-floor office, a multi-building campus, or an outdoor venue, Pro-Tech delivers wireless solutions that are fast, secure, and easy to manage through centralized cloud controllers.",
+      "In today's mobile-first workplace, reliable Wi-Fi is not a luxury — it is a necessity. Pro-Tech designs and deploys enterprise wireless networks that deliver consistent, high-speed coverage across your entire facility, from open offices to warehouse floors.\n\nWe use Ekahau AI Pro predictive design and passive validation surveys to plan and verify wireless networks that eliminate dead zones and co-channel interference. Our solutions leverage Wi-Fi 6 and Wi-Fi 6E technology from vendors like Cisco Meraki, Aruba, and Ruckus to support high-density environments with hundreds or thousands of concurrent devices.\n\nSecurity is built into every wireless deployment. We implement WPA3 encryption, 802.1X authentication, guest network segmentation, and rogue AP detection to protect your network from unauthorized access and threats.\n\nWhether you need to cover a single-floor office, a multi-building campus, or an outdoor venue, Pro-Tech delivers wireless solutions that are fast, secure, and easy to manage through centralized cloud controllers.",
     // PLACEHOLDER
     features: [
       {
         icon: 'LuRadar',
         title: 'RF Site Surveys',
         description:
-          'Predictive and on-site radio frequency surveys to optimize access point placement and eliminate coverage gaps.',
+          'Ekahau AI Pro predictive design and passive validation surveys to optimize access point placement, verify real-world performance, and eliminate coverage gaps.',
       },
       {
         icon: 'LuWifi',
@@ -239,6 +252,10 @@ export const services = [
   {
     slug: 'voip-unified-comms',
     name: 'VoIP & Unified Communications',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle: 'VoIP & Unified Communications in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'VoIP phone systems and unified communications — voice, video and messaging — deployed and supported for businesses across Dartmouth, Halifax and Nova Scotia.',
     icon: 'LuPhone',
     svgDiagram: voipDiagram,
     tagline: 'Modern communication systems that keep your team connected', // PLACEHOLDER
@@ -313,6 +330,10 @@ export const services = [
   {
     slug: 'cctv-security',
     name: 'CCTV & Physical Security',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle: 'CCTV & Access Control in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'IP CCTV surveillance, access control and intrusion detection design and installation to protect facilities across Dartmouth, Halifax and Nova Scotia.',
     icon: 'LuShield',
     svgDiagram: securityDiagram,
     tagline: 'Comprehensive security systems to protect what matters most', // PLACEHOLDER
@@ -387,6 +408,10 @@ export const services = [
   {
     slug: 'managed-it-support',
     name: 'Managed IT Services',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle: 'Managed IT Services in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'Proactive managed IT — 24/7 monitoring, patching, backup and help desk — for businesses across Dartmouth, Halifax and Nova Scotia. Enterprise IT without the overhead.',
     icon: 'LuHeadset',
     tagline: 'Proactive IT management so your business never skips a beat',
     svgDiagram: managedItDiagram,
@@ -460,6 +485,10 @@ export const services = [
   {
     slug: 'field-services',
     name: 'Field Services',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle: 'IT Field Services & Dispatch in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'On-site IT field services — installs, moves, rack/stack and break-fix — from Dartmouth and Halifax across Nova Scotia, with 24/7 emergency dispatch nationwide.',
     icon: 'LuMapPin',
     tagline: 'Boots on the ground, coast to coast',
     svgDiagram: fieldDiagram,
@@ -549,6 +578,10 @@ export const services = [
   {
     slug: 'cloud-hybrid-cloud',
     name: 'Cloud & Hybrid Cloud',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle: 'Cloud & Hybrid Cloud in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'Azure, AWS and Google Cloud migration, hybrid architecture and managed cloud operations for businesses across Dartmouth, Halifax and Nova Scotia.',
     icon: 'LuCloud',
     tagline: 'Scalable cloud solutions tailored to your workload', // PLACEHOLDER
     svgDiagram: cloudDiagram,
@@ -640,6 +673,11 @@ export const services = [
   {
     slug: 'project-management',
     name: 'Project Management & Deployment',
+    // PLACEHOLDER — geo-targeted SEO copy for owner approval
+    metaTitle:
+      'IT Project Management & Deployment in Dartmouth & Halifax, NS | Pro-Tech IT Consulting',
+    metaDescription:
+      'PMP-certified IT project management for network rollouts, data center builds and relocations across Dartmouth, Halifax and Nova Scotia — on time and on budget.',
     icon: 'LuClipboardList',
     svgDiagram: projectManagementDiagram,
     tagline: 'Expert project delivery from planning to go-live', // PLACEHOLDER

@@ -3,18 +3,26 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 function StatCounter({ value, label, suffix = '', prefix = '' }) {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.3 });
-  const [count, setCount] = useState(0);
+  // Seed with the real value so it is present in the initial render + pre-rendered HTML
+  // (crawlers never see "0", and hydration matches the prerendered snapshot).
+  const [count, setCount] = useState(value);
 
   useEffect(() => {
     if (!isVisible) return;
 
+    // Respect reduced motion (and the prerender, which emulates it): keep the seeded
+    // real value, no count-up.
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const duration = prefersReducedMotion ? 0 : 2000;
+    if (prefersReducedMotion) return;
+
+    const duration = 2000;
     const steps = 60;
     const increment = value / steps;
     let current = 0;
     const interval = duration / steps;
 
+    // Count up from 0 → value when the section scrolls into view. The first tick (and
+    // every setCount) runs inside the timer callback, never synchronously in the effect.
     const timer = setInterval(() => {
       current += increment;
       if (current >= value) {

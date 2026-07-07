@@ -68,8 +68,16 @@ function Contact() {
               </ContactInfoCard>
 
               <ContactInfoCard icon="LuClock" title="Business Hours">
-                <p>Monday - Friday: {company.businessHours.weekday}</p>
-                <p>Saturday - Sunday: {company.businessHours.weekend}</p>
+                <p>Office hours: Monday - Friday, {company.businessHours.weekday}</p>
+                <p className="mt-1">
+                  24/7 emergency field dispatch:{' '}
+                  <a
+                    href={`tel:${company.phone}`}
+                    className="text-primary-dark transition-colors hover:text-primary"
+                  >
+                    {company.phone}
+                  </a>
+                </p>
               </ContactInfoCard>
             </div>
           </div>

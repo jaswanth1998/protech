@@ -23,11 +23,10 @@ export const company = {
     weekend: 'Closed',
   },
 
-  // PLACEHOLDER — replace with real social links
-  social: {
-    linkedIn: 'https://linkedin.com/company/protech-it-consulting',
-    twitter: 'https://twitter.com/protechit',
-  },
+  // PLACEHOLDER — social links intentionally empty until the correct, verified handles
+  // are confirmed. Re-add e.g. { linkedIn: '...', twitter: '...' } and they will
+  // reappear in the footer and JSON-LD `sameAs` automatically.
+  social: {},
 
   // PLACEHOLDER — replace with real mission and vision
   mission:

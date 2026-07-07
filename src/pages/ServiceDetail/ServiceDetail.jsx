@@ -52,7 +52,10 @@ function ServiceDetail() {
 
   return (
     <>
-      <SEO title={`${service.name} · Pro-Tech IT Consulting`} description={service.tagline} />
+      <SEO
+        title={service.metaTitle ?? `${service.name} · Pro-Tech IT Consulting`}
+        description={service.metaDescription ?? service.tagline}
+      />
 
       {/* Section 1: Page Hero */}
       <PageHero

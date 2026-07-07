@@ -1,17 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import SEO from '@/components/shared/SEO';
-import ciscoLogo from '@/assets/images/logos/cisco.svg';
-import dellLogo from '@/assets/images/logos/dell.svg';
-import microsoftLogo from '@/assets/images/logos/microsoft.svg';
-import fortinetLogo from '@/assets/images/logos/fortinet.svg';
-import hpLogo from '@/assets/images/logos/hp.svg';
-import vmwareLogo from '@/assets/images/logos/vmware.svg';
-import awsLogo from '@/assets/images/logos/aws.svg';
-import juniperLogo from '@/assets/images/logos/juniper.svg';
-import paloaltoLogo from '@/assets/images/logos/paloalto.svg';
-import azureLogo from '@/assets/images/logos/azure.svg';
-import googleCloudLogo from '@/assets/images/logos/google-cloud.svg';
-import oracleLogo from '@/assets/images/logos/oracle.svg';
 import Hero from '@/components/shared/Hero';
 import LogoStrip from '@/components/shared/LogoStrip';
 import Container from '@/components/ui/Container';
@@ -26,19 +14,21 @@ import { services } from '@/data/services';
 import { industries } from '@/data/industries';
 import { stats } from '@/data/stats';
 
+// Vendor logos are served as static files from public/logos/ (stable URLs, no inline
+// data-URIs bloating the pre-rendered HTML).
 const partnerLogos = [
-  { src: ciscoLogo, alt: 'Cisco' },
-  { src: dellLogo, alt: 'Dell' },
-  { src: microsoftLogo, alt: 'Microsoft' },
-  { src: fortinetLogo, alt: 'Fortinet' },
-  { src: hpLogo, alt: 'HP' },
-  { src: vmwareLogo, alt: 'VMware', sizeClass: 'h-16 md:h-20' },
-  { src: awsLogo, alt: 'AWS' },
-  { src: juniperLogo, alt: 'Juniper', sizeClass: 'h-16 md:h-20', opacityClass: 'opacity-100' },
-  { src: paloaltoLogo, alt: 'Palo Alto Networks' },
-  { src: azureLogo, alt: 'Azure' },
-  { src: googleCloudLogo, alt: 'Google Cloud', sizeClass: 'h-12 md:h-16' },
-  { src: oracleLogo, alt: 'Oracle', sizeClass: 'h-7 md:h-8' },
+  { src: '/logos/cisco.svg', alt: 'Cisco' },
+  { src: '/logos/dell.svg', alt: 'Dell' },
+  { src: '/logos/microsoft.svg', alt: 'Microsoft' },
+  { src: '/logos/fortinet.svg', alt: 'Fortinet' },
+  { src: '/logos/hp.svg', alt: 'HP' },
+  { src: '/logos/vmware.svg', alt: 'VMware', sizeClass: 'h-16 md:h-20' },
+  { src: '/logos/aws.svg', alt: 'AWS' },
+  { src: '/logos/juniper.svg', alt: 'Juniper', sizeClass: 'h-16 md:h-20' },
+  { src: '/logos/paloalto.svg', alt: 'Palo Alto Networks' },
+  { src: '/logos/azure.svg', alt: 'Azure' },
+  { src: '/logos/google-cloud.svg', alt: 'Google Cloud', sizeClass: 'h-12 md:h-16' },
+  { src: '/logos/oracle.svg', alt: 'Oracle', sizeClass: 'h-7 md:h-8' },
 ];
 
 const whyChooseUs = [
@@ -83,8 +73,8 @@ function Home() {
   return (
     <>
       <SEO
-        title="Pro-Tech IT Consulting — Your Reliable Service Partner"
-        description="Pro-Tech IT Consulting delivers reliable IT infrastructure, networking, cloud, and security solutions. Your trusted technology partner for businesses across industries."
+        title="Structured Cabling, Wireless Surveys & IT Field Services | Dartmouth–Halifax, NS | Pro-Tech IT Consulting"
+        description="Pro-Tech IT Consulting delivers structured cabling, Ekahau Wi-Fi surveys, network infrastructure, CCTV, and 24/7 IT field services for businesses across Dartmouth, Halifax and Nova Scotia."
       />
 
       {/* Section 1: Hero */}

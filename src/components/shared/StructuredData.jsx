@@ -10,6 +10,7 @@ export const SITE_URL = 'https://pro-techitconsulting.com';
  * AI assistants understand the business (name, contact, address, social profiles).
  */
 function StructuredData() {
+  const sameAs = Object.values(company.social).filter(Boolean);
   const data = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
@@ -17,7 +18,7 @@ function StructuredData() {
     description: company.mission,
     url: SITE_URL,
     logo: `${SITE_URL}/favicon.svg`,
-    image: `${SITE_URL}/favicon.svg`,
+    image: `${SITE_URL}/og-image.png`,
     email: company.email,
     telephone: company.phone,
     address: {
@@ -28,7 +29,8 @@ function StructuredData() {
       postalCode: company.address.postal,
       addressCountry: company.address.country,
     },
-    sameAs: Object.values(company.social).filter(Boolean),
+    // Only emit sameAs when we have verified social profiles.
+    ...(sameAs.length > 0 && { sameAs }),
   };
 
   return (

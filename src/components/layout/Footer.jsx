@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LuLinkedin, LuTwitter, LuMapPin, LuPhone, LuMail, LuArrowRight } from 'react-icons/lu';
+import { LuMapPin, LuPhone, LuMail, LuArrowRight } from 'react-icons/lu';
 import { footerLinks } from '@/data/navigation';
 import { company } from '@/data/company';
 import Container from '@/components/ui/Container';
@@ -28,27 +28,8 @@ function Footer() {
               {company.tagline}. Delivering reliable IT infrastructure and networking solutions for
               businesses across industries.
             </p>
-            {/* Social Icons */}
-            <div className="mt-6 flex gap-3">
-              <a
-                href={company.social.linkedIn}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-light/30 text-gray-400 transition-all hover:bg-primary/20 hover:text-primary"
-              >
-                <LuLinkedin className="h-5 w-5" />
-              </a>
-              <a
-                href={company.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-light/30 text-gray-400 transition-all hover:bg-primary/20 hover:text-primary"
-              >
-                <LuTwitter className="h-5 w-5" />
-              </a>
-            </div>
+            {/* PLACEHOLDER — social links removed until the correct, verified handles are
+                confirmed. Re-add here (and re-populate company.social) once available. */}
           </div>
 
           {/* Column 2: Quick Links */}
