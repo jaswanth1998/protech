@@ -11,8 +11,11 @@ function SEO({ title, description, canonicalUrl, ogImage }) {
   const { pathname } = useLocation();
   const fullTitle = title.includes('Pro-Tech') ? title : `${title} — ${SITE_NAME}`;
   // Build a canonical/OG URL from the current route unless one is passed explicitly.
+  // GitHub Pages serves directory routes with a trailing slash (/about -> 301 ->
+  // /about/), so we use the trailing-slash form to match the actual 200 URL rather
+  // than point the canonical at a redirecting URL.
   const canonical =
-    canonicalUrl || `${SITE_URL}${pathname === '/' ? '/' : pathname.replace(/\/+$/, '')}`;
+    canonicalUrl || `${SITE_URL}${pathname === '/' ? '/' : pathname.replace(/\/+$/, '') + '/'}`;
   const image = ogImage || DEFAULT_OG_IMAGE;
 
   return (

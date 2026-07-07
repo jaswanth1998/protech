@@ -116,8 +116,10 @@ function buildSitemap(routes) {
   };
   const urls = routes
     .map(
+      // Trailing slash matches the URL GitHub Pages actually serves (/about/), so the
+      // sitemap lists 200 URLs rather than ones that 301-redirect.
       (route) =>
-        `  <url>\n    <loc>${SITE_URL}${route === '/' ? '/' : route}</loc>\n` +
+        `  <url>\n    <loc>${SITE_URL}${route === '/' ? '/' : route + '/'}</loc>\n` +
         `    <lastmod>${today}</lastmod>\n    <priority>${priority(route)}</priority>\n  </url>`,
     )
     .join('\n');
