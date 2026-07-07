@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Pro-Tech IT Consulting — "Your Reliable Service Partner." A static multi-page website for an IT consultancy / networking services business, built with React + Vite + Tailwind CSS, deployed via Nginx reverse proxy.
+Pro-Tech IT Consulting — "Your Reliable Service Partner." A static multi-page website for an IT consultancy / networking services business, built with React + Vite + Tailwind CSS. Deployed to **GitHub Pages** (custom domain `pro-techitconsulting.com` via `public/CNAME`) by the `.github/workflows/deploy.yml` Actions workflow. The build statically pre-renders every route to HTML (SSG) so crawlers receive full content — see Key Configuration Notes.
 
 ## Repository Structure
 
@@ -17,7 +17,8 @@ Pro-Tech IT Consulting — "Your Reliable Service Partner." A static multi-page 
   - `data/` — Static data files
   - `utils/` — Helper functions
   - `styles/` — Global CSS with Tailwind v4 theme
-- `public/` — Static files (favicon, robots.txt, sitemap.xml)
+- `public/` — Static files (favicon, robots.txt, `CNAME`, `404.html` SPA fallback). `sitemap.xml` is generated into `dist/` at build time by `scripts/prerender.mjs`.
+- `scripts/` — Build tooling (`prerender.mjs` — post-build SSG snapshot + sitemap generation)
 - `.claude/plans/` — Project plans (see Plan Execution Workflow below)
 - `.claude/prompts/` — Custom prompts (e.g., `stepup.md`)
 
@@ -87,7 +88,7 @@ Plans should generally be executed in numerical order (00 → 01 → 02 → ...)
 | 04 | Page-by-Page Sections Plan | completed |
 | 05 | Component Build Plan | completed |
 | 06 | Content Requirements Plan | completed |
-| 07 | ~~GitHub Actions & Deployment Plan~~ | removed (switched to Nginx) |
+| 07 | GitHub Actions & Deployment Plan | completed (GitHub Pages, `deploy.yml`) |
 | 08 | Implementation Sequence Plan | not_started |
 
 ---
@@ -104,7 +105,8 @@ Plans should generally be executed in numerical order (00 → 01 → 02 → ...)
 | Forms | React Hook Form + Zod | 7.71.2 / 4.3.6 |
 | Animations | Framer Motion | 12.34.5 |
 | SEO | react-helmet-async | 3.0.0 |
-| Deployment | Nginx (reverse proxy) | — |
+| Deployment | GitHub Pages (Actions + custom domain) | — |
+| Pre-render | Puppeteer post-build SSG (`scripts/prerender.mjs`) | — |
 | Package Manager | npm (lockfile committed) | — |
 
 ## Key Configuration Notes
@@ -115,6 +117,7 @@ Plans should generally be executed in numerical order (00 → 01 → 02 → ...)
 - **Router**: No basename (serves from root).
 - **Code splitting**: All pages lazy-loaded via `React.lazy()`.
 - **Path alias**: `@` → `/src` in vite.config.js.
+- **Static pre-rendering (SSG)**: `npm run build` runs `vite build` then `node scripts/prerender.mjs`, which drives the built app in headless Chromium (Puppeteer) and writes a fully-rendered `index.html` for every route into `dist/`, plus a fresh `dist/sitemap.xml`. This makes page content visible to crawlers. `src/main.jsx` hydrates the pre-rendered markup (`hydrateRoot`) when `#root` already has content, and falls back to `createRoot` in dev.
 
 ## npm Scripts
 

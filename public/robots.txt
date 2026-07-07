@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# PLACEHOLDER — Update with your actual domain
-# Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://pro-techitconsulting.com/sitemap.xml
